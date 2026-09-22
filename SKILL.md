@@ -1,36 +1,73 @@
 ---
 name: zero-guess-debugger
 description: >-
-  Stop AI coding agents from burning your quota with blind trial-and-error. Enforces zero-hallucination,
-  mandatory pre-fix diagnostic cards, a 2-attempt circuit breaker, bidirectional reverse-checking,
-  and strict 3-tier verification gates across all bug fixes and live testing.
+  Stop AI coding agents from burning your quota with blind trial-and-error. Enforces goal definition,
+  prerequisite analysis, living task checklists, sequential step-by-step execution with live completion
+  updates, zero-hallucination, mandatory pre-fix diagnostic cards, 2-attempt circuit breakers,
+  bidirectional reverse-checking, and strict 3-tier verification gates.
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/-zero-guess-debugger
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
-# 🛡️ Zero-Guess Debugger (Anti-Trial-and-Error Protocol)
+# 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
-> **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**
-
----
-
-## 🚫 The Problem: The AI Quota-Burning Loop
-
-When AI agents encounter a bug or test failure, their default behavior is often:
-1. Guessing what might be broken without reading the code.
-2. Making speculative edits across random files hoping something works.
-3. Hallucinating methods, parameters, and props that don't exist.
-4. Repeatedly retrying failing commands and burning hundreds of thousands of tokens.
-5. Introducing silent regressions while attempting to fix the original symptom.
-
-**Zero-Guess Debugger** forces the AI agent into an ironclad, evidence-first engineering discipline.
+> **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
+> Combines **Goal Decomposition & Living Task Checklists** with an **Anti-Trial-and-Error Zero-Guess Debugging Protocol**.
 
 ---
 
-## 📐 The 5-Step Zero-Guess Cognitive Loop
+## 🧭 Phase 1: Goal Decomposition & Planning (Before Any Code is Touched)
+
+Whenever the user provides a request, feature requirement, or problem statement, the agent MUST first formulate a structured **Execution Plan**:
+
+### 1. Define the Concrete Goal
+- **User Request Summary:** Restate what the user is asking for in precise, unambiguous technical terms.
+- **Success Criteria:** What exact condition defines that this task is 100% complete and working?
+
+### 2. Prerequisite & Impact Analysis ("What is Required & How")
+- **What is Required to Accomplish It:**
+  - New files to create, existing files to modify, or files to delete.
+  - Required packages, library imports, or API definitions.
+  - Data contracts, schemas, or type models.
+- **How It Will Be Created:**
+  - Concrete architectural strategy, component hierarchy, function logic, and data flow.
+  - Explicit platform boundary checks (Web, Android/Capacitor, iOS).
+
+### 3. The Living Task Checklist
+Break down the implementation into atomic, sequential milestones:
+```markdown
+### 📋 Task Checklist
+- [ ] Task 1: [Short Actionable Title] — Description of deliverables
+- [ ] Task 2: [Short Actionable Title] — Description of deliverables
+- [ ] Task 3: [Short Actionable Title] — Description of deliverables
+- [ ] Task 4: 3-Tier Verification Gate (Static -> Contract -> Live)
+```
+
+---
+
+## ⚡ Phase 2: Sequential Step-by-Step Execution & Live Progress Tracking
+
+Execute the task checklist **strictly one-by-one**:
+
+1. **One Task at a Time:** Never attempt to do everything in one massive, chaotic blast. Focus entirely on the active task.
+2. **Live Completion Status Updates:** As soon as a task is completed, report the updated checklist to the user with a concise summary of what was accomplished:
+   ```markdown
+   ### 📋 Execution Progress
+   - [x] **Task 1: Define TypeScript schemas and contracts** — *Completed (Added `types/astrology.ts`)*
+   - [>] **Task 2: Implement computation logic** — *IN PROGRESS*
+   - [ ] Task 3: Build UI view component — *Pending*
+   - [ ] Task 4: Run 3-Tier Verification Gate — *Pending*
+   ```
+3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 3) to solve the root cause before moving forward.
+
+---
+
+## 🔒 Phase 3: The Zero-Guess Debugging Protocol
+
+When encountering any error, bug, test failure, or unexpected behavior during execution or live testing:
 
 ```
                       ┌────────────────────────────────────────┐
@@ -65,21 +102,20 @@ When AI agents encounter a bug or test failure, their default behavior is often:
                       └────────────────────────────────────────┘
 ```
 
----
-
-## 🔒 The 8 Core Protocols
-
 ### 1. Zero-Hallucination Mandate
 - **Never guess API signatures:** Ground every referenced method, function argument, component prop, and file path in actual source code using `view_file` or `grep_search`.
 - **Third-Party Reality Check:** Never assume external libraries export a function without checking `package.json` or `.d.ts` definitions.
 
 ### 2. Mandatory Pre-Fix Diagnostic Card
-Before touching any source file, the agent MUST present a 5-point proof card:
-- `[SYMPTOM]`     : Verbatim error message, status code, or observable defect.
-- `[LOCATION]`    : Exact file path, function name, and verified line numbers.
-- `[ROOT CAUSE]`  : The exact mechanical failure mechanism.
-- `[SURGICAL FIX]`: Proposed change curing the root defect at the origin.
-- `[BLAST RADIUS]`: All callers and consumers audited via `grep_search`.
+Before touching any source file, the agent MUST output a 5-point proof card:
+```markdown
+### 🔍 Diagnostic Card
+- [SYMPTOM]     : Verbatim error message, status code, or observable defect.
+- [LOCATION]    : Exact file path, function name, and verified line numbers.
+- [ROOT CAUSE]  : The exact mechanical failure mechanism.
+- [SURGICAL FIX]]: Proposed change curing the root defect at the origin.
+- [BLAST RADIUS]: All callers and consumers audited via grep_search.
+```
 
 ### 3. Blast Radius & Regression Shield
 - Before modifying any shared function signature, return type, or state structure, audit all callers using `grep_search`.
