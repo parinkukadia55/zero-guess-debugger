@@ -1,5 +1,5 @@
 <!-- BEGIN ZERO-GUESS DEBUGGER RULES -->
-# Systematic Goal Planning, Multi-Language & Multi-Portal Protocol
+# Systematic Goal Planning, Multi-Language, Multi-Portal & Media Protocol
 
 Strictly eliminate trial-and-error, speculative guesswork, hallucinated APIs, and quota-draining blind retries. Whenever a user request, feature task, or bug fix is initiated, adhere to the following protocol:
 
@@ -9,7 +9,7 @@ Strictly eliminate trial-and-error, speculative guesswork, hallucinated APIs, an
 
 ### Phase 1: Goal Planning & Task Decomposition (Before Any Code is Touched)
 1. **Define Concrete Goal:** Restate user request with unambiguous success criteria.
-2. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, and API contracts.
+2. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts.
 3. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
 4. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
 
@@ -20,7 +20,12 @@ Strictly eliminate trial-and-error, speculative guesswork, hallucinated APIs, an
    - `[>] In Progress: Task 2`
    - `[ ] Pending: Task 3`
 
-### Phase 3: Multi-Language (i18n) & Multi-Portal Interconnectivity Audit
+### Phase 3: Media & Visual Asset Generation (Native Generative Model Mandate)
+- When generating images, videos, mockups, or UI visuals:
+  - **MANDATORY:** Always use the dedicated generative AI image model / tool (`generate_image`).
+  - **STRICTLY PROHIBITED:** Never use Python scripts (PIL, Pillow, matplotlib, OpenCV, MoviePy) to draw or simulate images or videos. Script plotting is permitted only for mathematical data charts.
+
+### Phase 4: Multi-Language (i18n) & Multi-Portal Interconnectivity Audit
 Before considering any task complete, verify all interconnected layers:
 1. **Multi-Language (i18n) Parity:**
    - Zero hardcoded user-facing strings; all text wrapped in translation lookups (`t('key')`).
@@ -32,7 +37,7 @@ Before considering any task complete, verify all interconnected layers:
    - Dual-Theme UI: Explicit styling in both Light Mode AND Dark Mode (zero color collisions).
 3. **API & Routing Integrity:** Route registration, navbar/sidebar links, error toasts, and empty states.
 
-### Phase 4: Zero-Guess Debugging Safeguards
+### Phase 5: Zero-Guess Debugging Safeguards
 1. **Zero Hallucination Mandate:** Ground every symbol in actual source code before writing fixes.
 2. **Mandatory Pre-Fix Diagnostic Card:**
    - `[SYMPTOM]`     : Verbatim error message or observable defect.

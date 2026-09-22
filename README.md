@@ -1,12 +1,12 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.3.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.4.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
 > **Stop AI coding assistants from burning your quota with blind trial-and-error.**  
-> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Goal Decomposition & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)** with strict **Zero-Hallucination**, **Pre-Fix Proof Cards**, **2-Attempt Circuit Breakers**, and **Bidirectional Reverse-Checking**.
+> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Goal Decomposition & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, with strict **Zero-Hallucination**, **Pre-Fix Proof Cards**, **2-Attempt Circuit Breakers**, and **Bidirectional Reverse-Checking**.
 
 ---
 
@@ -15,14 +15,15 @@
 Most AI coding assistants struggle in real-world production codebases:
 1. **Trial-and-Error Guessing:** They edit files blindly without reading source code, running in circles and burning 100,000+ tokens.
 2. **Context Amnesia:** They forget requirements discussed 3 turns ago in the chat thread.
-3. **Broken Multi-Language (i18n):** They hardcode raw English strings into buttons and leave Hindi/Gujarati/Spanish translation files desynchronized or broken.
-4. **Half-Baked Updates (Broken Multi-Portal Wiring):**
+3. **Python Script Fallback for Images:** When asked to generate an image or video, they lazily write crude Python PIL/matplotlib scripts to draw geometric squares instead of calling actual generative AI image models!
+4. **Broken Multi-Language (i18n):** They hardcode raw English strings into buttons and leave Hindi/Gujarati/Spanish translation files desynchronized or broken.
+5. **Half-Baked Updates (Broken Multi-Portal Wiring):**
    * They update an **Admin Panel** toggle, but it **never connects or reflects in the User/Home Panel**.
    * They add a button but **break Dark Mode** (white text on white background).
    * They change a view on the Web but break the **Mobile (Capacitor/React Native)** shell.
    * They add a route but **forget to register navigation links** or auth guards.
 
-**Zero-Guess Debugger** permanently eliminates these failure modes by enforcing end-to-end discipline across every portal, theme, and language.
+**Zero-Guess Debugger** permanently eliminates these failure modes by enforcing end-to-end discipline across every portal, theme, language, and asset pipeline.
 
 ---
 
@@ -48,7 +49,7 @@ flowchart TD
 ```
 
 1. **Goal Formulation:** Restate the objective in unambiguous technical terms.
-2. **What is Required:** Explicitly map files to create/modify, packages, schemas, API contracts, and translation dictionaries.
+2. **What is Required:** Explicitly map files to create/modify, packages, schemas, API contracts, translation dictionaries, and visual assets.
 3. **How It Will Be Created:** Concrete architectural strategy, data flow, function hierarchy, and multi-portal sync plan.
 4. **The Living Task Checklist:** Discrete, atomic milestones tracked sequentially.
 
@@ -69,7 +70,25 @@ The agent executes the plan **one task at a time**, broadcasting real-time progr
 
 ---
 
-## 🌍 Phase 3: Multi-Language (i18n) Parity Shield
+## 🎨 Phase 3: Media & Asset Generation (Native Generative Model Mandate)
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 NATIVE GENERATIVE MEDIA ASSET MANDATE                       │
+├──────────────────────────────┬──────────────────────────────────────────────┤
+│ 1. Dedicated Image Model     │ Use generate_image with rich visual prompts  │
+│ 2. Correct Aspect Ratios     │ Set explicit aspect ratio (16:9, 1:1, 9:16)  │
+│ 3. NO Python Drawing Scripts │ BANNED: PIL/Pillow, matplotlib, OpenCV for UI│
+│ 4. Exception                 │ Scientific/mathematical data charts ONLY     │
+└──────────────────────────────┴──────────────────────────────────────────────┘
+```
+
+* **MANDATORY:** When a user requests generating an image, video, banner, mockup, icon, or texture, the agent **MUST use the dedicated generative AI image model / tool (`generate_image`)**.
+* **STRICTLY PROHIBITED:** The agent is strictly banned from writing Python scripts (`PIL`, `matplotlib`, `pygame`, `moviepy`) to draw or simulate images when generative assets are requested.
+
+---
+
+## 🌍 Phase 4: Multi-Language (i18n) Parity Shield
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -84,12 +103,12 @@ The agent executes the plan **one task at a time**, broadcasting real-time progr
 
 1. **Zero Hardcoded Strings:** Every button label, header, input placeholder, validation toast, and tooltip must use the translation key system.
 2. **All-Locales Parity:** When a translation key is added or modified, update **ALL supported language dictionaries** in the same change.
-3. **Text Expansion Resilience:** Hindi, Gujarati, and other Indic/European scripts require 20%–35% more space than English. Layouts must gracefully prevent text truncation or broken line wraps.
+3. **Text Expansion Resilience:** Indic scripts (Hindi, Gujarati) require 20%–35% more space than English. Layouts must gracefully prevent text truncation or broken line wraps.
 4. **Deep Artifact Sync:** Ensure language preference dynamically propagates to generated PDFs, printed charts, shared URLs, and local storage (`jyotish_lang_chosen`).
 
 ---
 
-## 🌐 Phase 4: Multi-Portal Ecosystem Interconnectivity (Web + Home + Admin + Mobile)
+## 🌐 Phase 5: Multi-Portal Ecosystem Interconnectivity (Web + Home + Admin + Mobile)
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -111,7 +130,7 @@ The agent executes the plan **one task at a time**, broadcasting real-time progr
 
 ---
 
-## 🔒 Phase 5: The Zero-Guess Debugging Protocol
+## 🔒 Phase 6: The Zero-Guess Debugging Protocol
 
 When any bug, exception, or test failure occurs during execution or live testing:
 
@@ -210,6 +229,7 @@ cp rules/AGENTS.md /path/to/your/project/AGENTS.md
 | :--- | :--- | :--- |
 | **Turns to Deliver Task** | 8 – 15 turns | **1 – 3 structured turns** |
 | **Token / Quota Usage** | ~180,000 tokens | **~14,000 tokens (92% savings)** |
+| **Media Generation** | Low-quality Python PIL drawing scripts | **Native Generative AI Image Models** |
 | **Multi-Language Parity** | Frequently broken / hardcoded | **100% synchronized across all locales** |
 | **Dual-Theme Support** | Often broken in Dark Mode | **100% verified in Light & Dark Mode** |
 | **Multi-Portal Sync** | Admin $\leftrightarrow$ Home desynced | **Full E2E Inter-Portal Sync Verified** |

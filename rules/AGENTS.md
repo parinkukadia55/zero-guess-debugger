@@ -14,7 +14,7 @@ When working on this project, trial-and-error debugging, speculative guessing, h
 
 ### Phase 1: Goal Planning & Task Decomposition (Before Any Code is Touched)
 1. **Define Concrete Goal:** Restate user request with unambiguous success criteria.
-2. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, and API contracts.
+2. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts.
 3. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
 4. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
 
@@ -29,7 +29,14 @@ When working on this project, trial-and-error debugging, speculative guessing, h
 
 ---
 
-### Phase 3: Multi-Language (i18n) & Multi-Portal Interconnectivity Audit
+### Phase 3: Media & Visual Asset Generation (Native Generative Model Mandate)
+- When generating images, videos, mockups, or UI visuals:
+  - **MANDATORY:** Always use the dedicated generative AI image model / tool (`generate_image`).
+  - **STRICTLY PROHIBITED:** Never use Python scripts (PIL, Pillow, matplotlib, OpenCV, MoviePy) to draw or simulate images or videos. Script plotting is permitted only for mathematical data charts.
+
+---
+
+### Phase 4: Multi-Language (i18n) & Multi-Portal Interconnectivity Audit
 Before considering any task complete, verify all interconnected layers:
 1. **Multi-Language (i18n) Parity:**
    - Zero hardcoded user-facing strings; all text wrapped in translation lookups (`t('key')`).
@@ -43,7 +50,7 @@ Before considering any task complete, verify all interconnected layers:
 
 ---
 
-### Phase 4: Zero-Guess Debugging Safeguards
+### Phase 5: Zero-Guess Debugging Safeguards
 1. **Zero-Hallucination Rule:** Confirm every symbol's declaration in codebase before using it in a fix.
 2. **Mandatory Pre-Fix Diagnostic Card:** Before editing code for a bug, state:
    - `[SYMPTOM]`     : Verbatim error message, status code, or observable defect.
