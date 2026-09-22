@@ -1,12 +1,12 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.4.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
 > **Stop AI coding assistants from burning your quota with blind trial-and-error.**  
-> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Goal Decomposition & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, with strict **Zero-Hallucination**, **Pre-Fix Proof Cards**, **2-Attempt Circuit Breakers**, and **Bidirectional Reverse-Checking**.
+> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, and an **End-of-Run Broken Item Eyesight Triage**.
 
 ---
 
@@ -15,15 +15,15 @@
 Most AI coding assistants struggle in real-world production codebases:
 1. **Trial-and-Error Guessing:** They edit files blindly without reading source code, running in circles and burning 100,000+ tokens.
 2. **Context Amnesia:** They forget requirements discussed 3 turns ago in the chat thread.
-3. **Python Script Fallback for Images:** When asked to generate an image or video, they lazily write crude Python PIL/matplotlib scripts to draw geometric squares instead of calling actual generative AI image models!
-4. **Broken Multi-Language (i18n):** They hardcode raw English strings into buttons and leave Hindi/Gujarati/Spanish translation files desynchronized or broken.
-5. **Half-Baked Updates (Broken Multi-Portal Wiring):**
+3. **Hidden Broken Buttons & Routes:** They update one view while quietly leaving 10 other buttons broken, dead routes unlinked, and endpoints 404ing—without ever alerting the user!
+4. **Python Script Fallback for Images:** When asked to generate an image or video, they lazily write crude Python PIL/matplotlib scripts to draw geometric squares instead of calling actual generative AI image models!
+5. **Broken Multi-Language (i18n):** They hardcode raw English strings into buttons and leave Hindi/Gujarati/Spanish translation files desynchronized or broken.
+6. **Half-Baked Updates (Broken Multi-Portal Wiring):**
    * They update an **Admin Panel** toggle, but it **never connects or reflects in the User/Home Panel**.
    * They add a button but **break Dark Mode** (white text on white background).
    * They change a view on the Web but break the **Mobile (Capacitor/React Native)** shell.
-   * They add a route but **forget to register navigation links** or auth guards.
 
-**Zero-Guess Debugger** permanently eliminates these failure modes by enforcing end-to-end discipline across every portal, theme, language, and asset pipeline.
+**Zero-Guess Debugger** permanently eliminates these failure modes by giving the user **100% Eyesight** into their system and enforcing end-to-end discipline.
 
 ---
 
@@ -35,23 +35,24 @@ Before planning or executing, the agent combines the entire conversation history
 
 ---
 
-## 🧭 Phase 1: Goal Planning & Task Decomposition
+## 🧭 Phase 1: Goal Planning, Wireframe & Route Mapping
 
 ```mermaid
 flowchart TD
     Chat["All Chat Threads & User Input"] --> Context["0. Cross-Thread Context Synthesis"]
-    Context --> Goal["1. Define Concrete Goal & Success Criteria"]
-    Goal --> Req["2. Audit Requirements (What is Required & How it is Built)"]
-    Req --> Tasks["3. Generate Living Task Checklist (Task 1, 2, 3...)"]
-    Tasks --> Inter["4. Multi-Language & Multi-Portal Interconnectivity Audit"]
-    Inter --> Exec["5. Sequential One-by-One Execution"]
-    Exec --> Done["6. Verified Delivery"]
+    Context --> Goal["1. Concrete Goal & Success Criteria"]
+    Goal --> Map["2. Wireframe & Route Mapping (Buttons, Endpoints, Modals)"]
+    Map --> Req["3. What is Required & How it is Built"]
+    Req --> Tasks["4. Living Task Checklist (Task 1, 2, 3...)"]
+    Tasks --> Exec["5. Sequential One-by-One Execution"]
+    Exec --> Eyesight["6. End-of-Run Broken Item Eyesight Report"]
 ```
 
 1. **Goal Formulation:** Restate the objective in unambiguous technical terms.
-2. **What is Required:** Explicitly map files to create/modify, packages, schemas, API contracts, translation dictionaries, and visual assets.
-3. **How It Will Be Created:** Concrete architectural strategy, data flow, function hierarchy, and multi-portal sync plan.
-4. **The Living Task Checklist:** Discrete, atomic milestones tracked sequentially.
+2. **Wireframe & Route Mapping:** In its internal reasoning, the agent maps all views, routes, interactive buttons, form triggers, and endpoints.
+3. **What is Required:** Explicitly map files to create/modify, packages, schemas, API contracts, translation dictionaries, and visual assets.
+4. **How It Will Be Created:** Concrete architectural strategy, data flow, function hierarchy, and multi-portal sync plan.
+5. **The Living Task Checklist:** Discrete, atomic milestones tracked sequentially.
 
 ---
 
@@ -66,6 +67,7 @@ The agent executes the plan **one task at a time**, broadcasting real-time progr
 - [>] **Task 3: Multi-Language Parity (en, hi, gu dictionaries)** — *IN PROGRESS*
 - [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
 - [ ] Task 5: Run 3-Tier Verification Gate — *Pending*
+- [ ] Task 6: Broken Button, Route & Endpoint Eyesight Report — *Pending*
 ```
 
 ---
@@ -188,6 +190,31 @@ When any bug, exception, or test failure occurs during execution or live testing
 
 ---
 
+## 👁️ Phase 7: End-of-Run Broken Item Eyesight Report
+
+At the end of any conversation, build session, or audit, the agent gives the user full **Eyesight** into all operational vs broken elements:
+
+```markdown
+### 👁️ Broken Buttons, Routes & Endpoints Eyesight Report
+
+#### 🟢 Verified & Operational Elements:
+- [Route/View]: Path or View name -> Confirmed operational.
+- [Button/Trigger]: Action name -> Correctly calls handler/endpoint.
+
+#### 🔴 Broken / Dead / Unlinked Elements Found:
+- [Broken Button]: `<button onclick="app.submitKundliForm()">` in `index.html:4343` -> Handler undefined.
+- [Unregistered Route]: `/settings/profile` in `Navbar.tsx:42` -> Not declared in router configuration.
+- [Dead Endpoint]: `POST /api/save-kundli` -> Route returns 404 / handler unmounted.
+- [Desynced Panel]: Admin toggle "Enable Muhurat" has no listener in User Home Panel.
+
+#### 🛠️ Immediate Remediation Roadmap:
+1. Priority 1: Add shim/implementation for missing button handlers.
+2. Priority 2: Register missing routes in router table.
+3. Priority 3: Mount dead endpoints in server controller.
+```
+
+---
+
 ## 🚀 Quick Installation
 
 Drop **Zero-Guess Debugger** into any AI coding tool in 10 seconds:
@@ -229,6 +256,7 @@ cp rules/AGENTS.md /path/to/your/project/AGENTS.md
 | :--- | :--- | :--- |
 | **Turns to Deliver Task** | 8 – 15 turns | **1 – 3 structured turns** |
 | **Token / Quota Usage** | ~180,000 tokens | **~14,000 tokens (92% savings)** |
+| **Broken Buttons & Routes** | Hidden / Unnoticed until runtime | **Explicitly cataloged in Eyesight Report** |
 | **Media Generation** | Low-quality Python PIL drawing scripts | **Native Generative AI Image Models** |
 | **Multi-Language Parity** | Frequently broken / hardcoded | **100% synchronized across all locales** |
 | **Dual-Theme Support** | Often broken in Dark Mode | **100% verified in Light & Dark Mode** |

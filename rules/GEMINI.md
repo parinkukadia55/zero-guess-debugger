@@ -1,5 +1,5 @@
 <!-- BEGIN ZERO-GUESS DEBUGGER RULES -->
-# Systematic Goal Planning, Multi-Language, Multi-Portal & Media Protocol
+# Systematic Goal Planning, Multi-Language, Multi-Portal & Eyesight Protocol
 
 Strictly eliminate trial-and-error, speculative guesswork, hallucinated APIs, and quota-draining blind retries. Whenever a user request, feature task, or bug fix is initiated, adhere to the following protocol:
 
@@ -7,11 +7,12 @@ Strictly eliminate trial-and-error, speculative guesswork, hallucinated APIs, an
 - Synthesize all constraints, design preferences, and architectural decisions from previous chat turns.
 - Never drop historical requirements (e.g. responsiveness, dark/light mode, multi-language parity, role permissions) when working on new tasks.
 
-### Phase 1: Goal Planning & Task Decomposition (Before Any Code is Touched)
+### Phase 1: Goal Planning & Wireframe Mapping (Before Any Code is Touched)
 1. **Define Concrete Goal:** Restate user request with unambiguous success criteria.
-2. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts.
-3. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
-4. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
+2. **Wireframe & Route Mapping:** In your internal reasoning, map all views, routes, interactive buttons, form triggers, and endpoints.
+3. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts.
+4. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
+5. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
 
 ### Phase 2: Sequential Step-by-Step Execution & Live Tracking
 1. **One Task at a Time:** Execute tasks strictly sequentially. Never attempt all tasks at once.
@@ -51,4 +52,10 @@ Before considering any task complete, verify all interconnected layers:
 6. **Strict 3-Tier Verification Gate:** Gate 1: Static (`tsc --noEmit`) -> Gate 2: Contract/i18n/Interconnect check -> Gate 3: Live retrying.
 7. **Platform Boundary Awareness:** Sandboxed storage fallbacks, camera track teardown, and native overrides.
 8. **Patch Minimalism:** Surgical fixes (under 20-30 lines). No symptom-masking with empty catches or arbitrary delay timers.
+
+### Phase 6: End-of-Run Broken Item Eyesight Report
+At the end of every conversation or audit, output a clear Eyesight Report:
+- **🟢 Verified & Operational Elements:** Confirmed routes and working buttons.
+- **🔴 Broken / Dead / Unlinked Elements Found:** Broken buttons, unhandled onclicks, missing routes, and 404 endpoints with exact file locations.
+- **🛠️ Remediation Roadmap:** Prioritized action items to fix remaining broken items.
 <!-- END ZERO-GUESS DEBUGGER RULES -->

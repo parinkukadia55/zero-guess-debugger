@@ -7,11 +7,12 @@ Trial-and-error debugging, speculative guessing, hallucinating APIs, and quota-d
 - Synthesize all constraints, design preferences, and architectural decisions from previous chat turns.
 - Never drop historical requirements (e.g. responsiveness, dark/light mode, multi-language parity, role permissions) when working on new tasks.
 
-## Phase 1: Goal Planning & Task Decomposition (Before Any Code is Touched)
+## Phase 1: Goal Planning & Wireframe Mapping (Before Any Code is Touched)
 1. **Define Concrete Goal:** Restate user request with unambiguous success criteria.
-2. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, and API contracts.
-3. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
-4. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
+2. **Wireframe & Route Mapping:** In your internal reasoning, map all views, routes, interactive buttons, form triggers, and endpoints.
+3. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts.
+4. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
+5. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
 
 ## Phase 2: Sequential Step-by-Step Execution & Live Tracking
 1. **One Task at a Time:** Execute tasks strictly sequentially. Never attempt all tasks at once.
@@ -26,7 +27,7 @@ Trial-and-error debugging, speculative guessing, hallucinating APIs, and quota-d
   - **STRICTLY PROHIBITED:** Never use Python scripts (PIL, Pillow, matplotlib, OpenCV, MoviePy) to draw or simulate images or videos. Script plotting is permitted only for mathematical data charts.
 
 ## Phase 4: Multi-Language (i18n) & Multi-Portal Interconnectivity Audit
-Before marking any task complete, verify all interconnected layers:
+Before considering any task complete, verify all interconnected layers:
 1. **Multi-Language (i18n) Parity:**
    - Zero hardcoded user-facing strings; all text wrapped in translation lookups (`t('key')`).
    - Simultaneous parity across all supported locales (`en`, `hi`, `gu`, etc.).
@@ -44,9 +45,15 @@ Before marking any task complete, verify all interconnected layers:
    - `[LOCATION]`    : Exact file path, function, and verified line numbers.
    - `[ROOT CAUSE]`  : The exact mechanical failure mechanism.
    - `[SURGICAL FIX]`: Concrete change addressing the origin.
-   - `[BLAST RADIUS]`: All callers/consumers, routes, endpoints, locales, and portals audited.
+   - `[BLAST RADIUS]`: All callers/consumers, routes, endpoints, locales, and panels audited.
 3. **Blast Radius & Regression Shield:** Audit all callers before modifying shared utilities, props, or translation keys.
 4. **The 2-Attempt Circuit Breaker:** Max 2 attempts per hypothesis. If Attempt 2 fails, HALT and trigger Reverse Check.
 5. **Bidirectional Reverse-Check:** Forward trace (Admin Panel -> Endpoint -> Router -> Home UI across all locales) and reverse check (failure backwards to origin).
 6. **Strict 3-Tier Verification Gate:** Gate 1: Static (`tsc --noEmit`) -> Gate 2: Contract/i18n/Interconnect check -> Gate 3: Live testing.
 7. **Patch Minimalism:** Surgical fixes (under 20-30 lines). No symptom-masking with empty catches or arbitrary delay timers.
+
+## Phase 6: End-of-Run Broken Item Eyesight Report
+At the end of every conversation or audit, output a clear Eyesight Report:
+- **🟢 Verified & Operational Elements:** Confirmed routes and working buttons.
+- **🔴 Broken / Dead / Unlinked Elements Found:** Broken buttons, unhandled onclicks, missing routes, and 404 endpoints with exact file locations.
+- **🛠️ Remediation Roadmap:** Prioritized action items to fix remaining broken items.

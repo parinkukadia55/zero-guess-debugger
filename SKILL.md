@@ -2,23 +2,23 @@
 name: zero-guess-debugger
 description: >-
   Stop AI coding agents from burning your quota with blind trial-and-error. Enforces cross-thread
-  context synthesis, goal definition, prerequisite analysis, living task checklists, sequential
-  step-by-step execution with live completion updates, multi-language (i18n) parity, multi-portal
-  interconnectivity (Web + User Home + Admin Panel + Mobile/Native), native AI image/video generation
-  models (no Python PIL/matplotlib scripts for visuals), zero-hallucination, mandatory pre-fix
-  diagnostic cards, 2-attempt circuit breakers, bidirectional reverse-checking, and strict 3-tier
-  verification gates.
+  context synthesis, architectural route & wireframe mapping, goal definition, prerequisite analysis,
+  living task checklists, sequential step-by-step execution with live completion updates, multi-language
+  (i18n) parity, multi-portal interconnectivity (Web + User Home + Admin Panel + Mobile/Native),
+  native AI image/video generation models, zero-hallucination, mandatory pre-fix diagnostic cards,
+  2-attempt circuit breakers, bidirectional reverse-checking, strict 3-tier verification gates, and
+  end-of-run eyesight triage reports for broken buttons, routes, and endpoints.
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/zero-guess-debugger
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
 > **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Cross-Thread Context Synthesis**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, and an **Anti-Trial-and-Error Zero-Guess Debugging Protocol**.
+> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, and an **End-of-Run Broken Item Eyesight Triage**.
 
 ---
 
@@ -31,7 +31,7 @@ Before generating any plan or touching code, the agent MUST synthesize the entir
 
 ---
 
-## 🧭 Phase 1: Goal Decomposition & Planning (Before Any Code is Touched)
+## 🧭 Phase 1: Goal Planning, Wireframe & Route Mapping (Before Any Code is Touched)
 
 Whenever the user provides a request, feature requirement, or problem statement, the agent MUST first formulate a structured **Execution Plan**:
 
@@ -39,7 +39,13 @@ Whenever the user provides a request, feature requirement, or problem statement,
 - **User Request Summary:** Restate what the user is asking for in precise, unambiguous technical terms.
 - **Success Criteria:** What exact condition defines that this task is 100% complete and working?
 
-### 2. Prerequisite & Impact Analysis ("What is Required & How")
+### 2. Architectural Wireframe & Route Mapping
+In its internal reasoning, the agent must build a structural map of the affected views and navigation:
+- **Routes & Views Mapped:** What routes, pages, tabs, or modals are involved?
+- **Interactive Buttons & Triggers:** What buttons, forms, or actions live on each view?
+- **Underlying Endpoints & Handlers:** What API endpoints or event handlers are connected to each button?
+
+### 3. Prerequisite & Impact Analysis ("What is Required & How")
 - **What is Required to Accomplish It:**
   - New files to create, existing files to modify, or files to delete.
   - Required packages, library imports, or API definitions.
@@ -51,7 +57,7 @@ Whenever the user provides a request, feature requirement, or problem statement,
   - Explicit platform boundary checks (Web, Android/Capacitor, iOS, Desktop).
   - Cross-portal data synchronization plan (Web $\leftrightarrow$ User Home $\leftrightarrow$ Admin Panel $\leftrightarrow$ Native Shell).
 
-### 3. The Living Task Checklist
+### 4. The Living Task Checklist
 Break down the implementation into atomic, sequential milestones:
 ```markdown
 ### 📋 Task Checklist
@@ -60,6 +66,7 @@ Break down the implementation into atomic, sequential milestones:
 - [ ] Task 3: Multi-Language (i18n) Parity Audit (All locales updated, zero hardcoded text)
 - [ ] Task 4: Multi-Portal Interconnectivity Audit (Web <-> User Home <-> Admin Panel)
 - [ ] Task 5: 3-Tier Verification Gate (Static -> Contract -> Live)
+- [ ] Task 6: Broken Button, Route & Endpoint Eyesight Report
 ```
 
 ---
@@ -77,6 +84,7 @@ Execute the task checklist **strictly one-by-one**:
    - [ ] Task 3: Multi-Language Parity (en, hi, gu) — *Pending*
    - [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
    - [ ] Task 5: Run 3-Tier Verification Gate — *Pending*
+   - [ ] Task 6: Eyesight Triage Audit — *Pending*
    ```
 3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 6) to solve the root cause before moving forward.
 
@@ -192,3 +200,30 @@ When encountering any error, bug, test failure, or unexpected behavior during ex
 6. **Strict 3-Tier Verification Gate:** Gate 1 (Static: `tsc --noEmit`) $\rightarrow$ Gate 2 (Contract, i18n & Interconnect checks) $\rightarrow$ Gate 3 (Live device/browser testing).
 7. **Platform Boundary Awareness:** Storage sandboxing (`localStorage` fallbacks), camera stream teardown (`track.stop()`), and native overrides for Android/Capacitor.
 8. **Patch Minimalism:** Surgical fixes (under 20–30 lines). No symptom-masking with empty catches or arbitrary timeouts.
+
+---
+
+## 👁️ Phase 7: End-of-Run Broken Item Eyesight Report
+
+At the end of any conversation, build session, or audit turn, the agent MUST summarize its architectural findings and give the user clear **"Eyesight"** into all operational vs broken elements:
+
+```markdown
+### 👁️ Broken Buttons, Routes & Endpoints Eyesight Report
+
+#### 🟢 Verified & Operational Elements:
+- [Route/View]: Path or View name -> Confirmed operational.
+- [Button/Trigger]: Action name -> Correctly calls handler/endpoint.
+
+#### 🔴 Broken / Dead / Unlinked Elements Found:
+- [Broken Button]: `<button onclick="app.missingHandler()">` in `index.html:4343` -> Handler is undefined.
+- [Unregistered Route]: `/settings/profile` in `Navbar.tsx:42` -> Not declared in router configuration.
+- [Dead Endpoint]: `POST /api/save-kundli` -> Route returns 404 / handler unmounted.
+- [Desynced Panel]: Admin toggle "Enable Muhurat" has no listener in User Home Panel.
+
+#### 🛠️ Immediate Remediation Roadmap:
+1. Priority 1: Add shim/implementation for missing button handlers.
+2. Priority 2: Register missing routes in router table.
+3. Priority 3: Mount dead endpoints in server controller.
+```
+
+This guarantees that the user is never left wondering what remains broken behind the scenes.
