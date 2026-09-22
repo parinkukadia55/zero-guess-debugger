@@ -1,7 +1,7 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/parinkukadia55/-zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
@@ -158,7 +158,7 @@ Drop **Zero-Guess Debugger** into any AI coding tool in 10 seconds:
 
 ### For Google Antigravity / Gemini CLI
 ```bash
-git clone https://github.com/parinkukadia55/-zero-guess-debugger.git ~/.gemini/config/skills/zero-guess-debugger
+git clone https://github.com/parinkukadia55/zero-guess-debugger.git ~/.gemini/config/skills/zero-guess-debugger
 ```
 
 ### For Cursor IDE
