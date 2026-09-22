@@ -3,21 +3,21 @@ name: zero-guess-debugger
 description: >-
   Stop AI coding agents from burning your quota with blind trial-and-error. Enforces cross-thread
   context synthesis, goal definition, prerequisite analysis, living task checklists, sequential
-  step-by-step execution with live completion updates, full-surface interconnectivity (endpoints,
-  routes, light/dark mode UI, admin/home panel wiring), zero-hallucination, mandatory pre-fix
-  diagnostic cards, 2-attempt circuit breakers, bidirectional reverse-checking, and strict 3-tier
-  verification gates.
+  step-by-step execution with live completion updates, multi-language (i18n) parity, multi-portal
+  interconnectivity (Web + User Home + Admin Panel + Mobile/Native), zero-hallucination, mandatory
+  pre-fix diagnostic cards, 2-attempt circuit breakers, bidirectional reverse-checking, and strict
+  3-tier verification gates.
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/zero-guess-debugger
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
 > **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Cross-Thread Context Synthesis**, **Goal Planning & Living Task Checklists**, **Full-Surface Interconnectivity Audits (Light/Dark Mode, Routes, Endpoints, Admin/Home Panels)** with an **Anti-Trial-and-Error Zero-Guess Debugging Protocol**.
+> Combines **Cross-Thread Context Synthesis**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)** with an **Anti-Trial-and-Error Zero-Guess Debugging Protocol**.
 
 ---
 
@@ -25,8 +25,8 @@ metadata:
 
 Before generating any plan or touching code, the agent MUST synthesize the entire conversation history:
 1. **Combine All Thread Decisions:** Gather all requirements, architectural constraints, design decisions, and preferences stated across previous user messages and turns.
-2. **Never Drop Historical Context:** Never omit previously agreed features (e.g. dual-theme support, mobile responsiveness, offline fallbacks, or role permissions) when working on new tasks.
-3. **Explicit Assumption Check:** If the user request relates to a previously discussed module or panel, trace the dependency chain before proceeding.
+2. **Never Drop Historical Context:** Never omit previously agreed features (e.g. dual-theme support, multi-language parity, mobile responsiveness, offline fallbacks, or role permissions) when working on new tasks.
+3. **Explicit Assumption Check:** If the user request relates to a previously discussed module or portal, trace the dependency chain before proceeding.
 
 ---
 
@@ -43,9 +43,11 @@ Whenever the user provides a request, feature requirement, or problem statement,
   - New files to create, existing files to modify, or files to delete.
   - Required packages, library imports, or API definitions.
   - Data contracts, schemas, or type models.
+  - Translation keys across all supported locales (`en`, `hi`, `gu`, etc.).
 - **How It Will Be Created:**
   - Concrete architectural strategy, component hierarchy, function logic, and data flow.
-  - Explicit platform boundary checks (Web, Android/Capacitor, iOS).
+  - Explicit platform boundary checks (Web, Android/Capacitor, iOS, Desktop).
+  - Cross-portal data synchronization plan (Web $\leftrightarrow$ User Home $\leftrightarrow$ Admin Panel $\leftrightarrow$ Native Shell).
 
 ### 3. The Living Task Checklist
 Break down the implementation into atomic, sequential milestones:
@@ -53,8 +55,8 @@ Break down the implementation into atomic, sequential milestones:
 ### 📋 Task Checklist
 - [ ] Task 1: [Short Actionable Title] — Description of deliverables
 - [ ] Task 2: [Short Actionable Title] — Description of deliverables
-- [ ] Task 3: [Short Actionable Title] — Description of deliverables
-- [ ] Task 4: Full-Surface Interconnectivity Audit (Light/Dark, Endpoints, Routes, Panels)
+- [ ] Task 3: Multi-Language (i18n) Parity Audit (All locales updated, zero hardcoded text)
+- [ ] Task 4: Multi-Portal Interconnectivity Audit (Web <-> User Home <-> Admin Panel)
 - [ ] Task 5: 3-Tier Verification Gate (Static -> Contract -> Live)
 ```
 
@@ -70,62 +72,63 @@ Execute the task checklist **strictly one-by-one**:
    ### 📋 Execution Progress
    - [x] **Task 1: Define TypeScript schemas and contracts** — *Completed (Added `types/astrology.ts`)*
    - [>] **Task 2: Implement computation logic** — *IN PROGRESS*
-   - [ ] Task 3: Build UI view component with Light & Dark mode — *Pending*
+   - [ ] Task 3: Multi-Language Parity (en, hi, gu) — *Pending*
    - [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
    - [ ] Task 5: Run 3-Tier Verification Gate — *Pending*
    ```
-3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 4) to solve the root cause before moving forward.
+3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 5) to solve the root cause before moving forward.
 
 ---
 
-## 🌐 Phase 3: Full-Surface Interconnectivity Audit (Anti-Partial-Update Shield)
+## 🌍 Phase 3: Multi-Language (i18n) Parity Shield
 
-A major failure mode of AI coding agents is delivering "half-baked" updates—modifying backend logic while forgetting UI components, breaking Dark Mode, leaving routes orphaned, or disconnecting the Admin Panel from the Home Panel.
-
-Before any feature or bug fix is considered complete, the agent MUST audit all 6 interconnected surfaces:
+In multilingual applications, AI agents frequently break localization by hardcoding English strings or leaving non-English dictionaries desynchronized. The agent must enforce:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                   FULL-SURFACE INTERCONNECTIVITY MAP                        │
+│                       MULTI-LANGUAGE (i18n) AUDIT                           │
 ├──────────────────────────────┬──────────────────────────────────────────────┤
-│ 1. API Endpoints & Handlers  │ Controller, routes, payload validation & DB   │
-│ 2. Routing & Navigation      │ Router table, navbar/sidebar links, guards   │
-│ 3. State Management & Store  │ Stores, reducers, caching, reactive sync     │
-│ 4. UI Components (Dual-Mode) │ Both Light Mode AND Dark Mode explicitly styled│
-│ 5. Cross-Panel Connectivity  │ Admin Panel controls <───> Home/User Panel   │
-│ 6. Error & Boundary States   │ Skeletons, empty states, error toasts        │
+│ 1. Zero Hardcoded Strings    │ All UI text wrapped in t('key') / dict lookup│
+│ 2. All-Locales Parity        │ Every new key added to en, hi, gu, etc.      │
+│ 3. Layout Resilience         │ UI handles 30% text expansion without breaks │
+│ 4. Cross-Portal Sync         │ Language switch syncs modals, PDFs, and views│
 └──────────────────────────────┴──────────────────────────────────────────────┘
 ```
 
-### 1. API Endpoints & Server Handlers
-- Verify that the backend endpoint or serverless function is created or updated.
-- Verify request payload validation, HTTP status codes, and response JSON schemas.
-
-### 2. Routing & Navigation
-- Verify that new or modified views are registered in the router configuration.
-- Verify that navigation bars, sidebars, breadcrumbs, and deep links point to the correct route.
-
-### 3. State Management & Store
-- Verify that client-side stores (Context, Zustand, Redux, or vanilla state) hold the updated state and trigger re-renders properly.
-
-### 4. Dual-Theme UI Component Audit (Light & Dark Mode)
-- **Zero Color Collisions:** Verify that every component is styled for **both Light Mode AND Dark Mode**.
-- **No Hardcoded Defaults:** Ban raw `#ffffff`, `#000000`, `bg-white`, or `text-black` without explicit dark counterparts (e.g. `dark:bg-slate-900 dark:text-white`).
-- Ensure borders, placeholders, muted text, icons, and cards maintain WCAG contrast across both themes.
-
-### 5. Cross-Panel Interconnectivity (Admin Panel $\leftrightarrow$ Home / User Panel)
-- **Check What Connects and Where:**
-  - If a feature has administrative settings, verify the **Admin Panel** has the controls (toggles, forms, actions).
-  - Verify that saving in the Admin Panel updates the backend/database.
-  - Verify that the **Home / User Panel** immediately reflects the changes made in the Admin Panel.
-  - Confirm permissions and role-based access rules between panels.
-
-### 6. Edge, Loading & Fallback States
-- Verify empty states ("No items found"), loading spinners/skeletons, and error toasts.
+1. **Zero Hardcoded Strings:** Every button label, header, input placeholder, validation toast, and tooltip must use the i18n translation system. Raw strings like `<button>Submit</button>` are strictly prohibited.
+2. **Simultaneous All-Locales Parity:** When a translation key is added or modified, update **ALL supported language dictionaries** in the same change. Never leave non-English locales missing keys.
+3. **Text Expansion & Layout Resilience:** Languages like Hindi and Gujarati frequently require 20%–35% more horizontal space than English. Ensure containers, buttons, and table headers use flexible layouts (`flex-wrap`, `min-w`, truncate with tooltips) to prevent layout overflows.
+4. **Export & Deep Artifact Sync:** Ensure language preference dynamically propagates to generated PDFs, printed charts, shared URLs, and local storage (`jyotish_lang_chosen`).
 
 ---
 
-## 🔒 Phase 4: The Zero-Guess Debugging Protocol
+## 🌐 Phase 4: Multi-Portal Ecosystem Interconnectivity (Web + Home + Admin + Mobile)
+
+When an application consists of multiple interconnected portals or shells, the agent must map and verify the complete ecosystem wire:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                           MULTI-PORTAL INTERCONNECTIVITY MATRIX                                │
+├──────────────────────────────┬─────────────────────────────────────────────────────────────────┤
+│ 1. Public Web Portal         │ Landing pages, marketing, SEO, guest calculation forms          │
+│ 2. User / Home Portal        │ Dashboard, user charts, history, saved dossiers, personal state │
+│ 3. Admin Panel               │ Master configs, translation overrides, feature toggles, analytics│
+│ 4. Mobile Shell (Capacitor)  │ Native camera bridges, hardware sensors, offline storage cache  │
+└──────────────────────────────┴─────────────────────────────────────────────────────────────────┘
+```
+
+### The 4-Portal Synchronization Rules:
+1. **Trace What Connects and Where:**
+   - **Producer Portal:** Where is the data configured or initiated? (e.g. Admin Panel toggle, User form input).
+   - **Transport & Storage:** Which API endpoint validates, persists, and broadcasts the change?
+   - **Consumer Portals:** How do the Public Web, User Home, and Mobile Shell invalidate cache and reflect the update?
+2. **Single Source of Truth:** Changes saved in the **Admin Panel** must propagate through the shared API/store and immediately reflect in the **User / Home Panel** without requiring manual database edits or code redeployment.
+3. **Cross-Portal Routing & Auth Guards:** Verify that admin-only routes remain protected against unauthenticated users, while deep links between the web portal and mobile app resolve to the correct view.
+4. **Dual-Theme UI Component Audit:** Every component across all portals must be styled for **both Light Mode AND Dark Mode** (no color collisions, zero unstyled backgrounds).
+
+---
+
+## 🔒 Phase 5: The Zero-Guess Debugging Protocol
 
 When encountering any error, bug, test failure, or unexpected behavior during execution or live testing:
 
@@ -174,12 +177,12 @@ Before touching any source file, the agent MUST output a 5-point proof card:
 - [LOCATION]    : Exact file path, function name, and verified line numbers.
 - [ROOT CAUSE]  : The exact mechanical failure mechanism.
 - [SURGICAL FIX]: Proposed change curing the root defect at the origin.
-- [BLAST RADIUS]: All callers, routes, endpoints, and panels audited via grep_search.
+- [BLAST RADIUS]: All callers, routes, endpoints, locales, and portals audited via grep_search.
 ```
 
 ### 3. Blast Radius & Regression Shield
-- Before modifying any shared function signature, return type, or state structure, audit all callers using `grep_search`.
-- Ensure changes do not break downstream consumers or introduce silent regressions.
+- Before modifying any shared function signature, return type, state structure, or translation key, audit all callers using `grep_search`.
+- Ensure changes do not break downstream consumers or introduce silent regressions across other portals.
 
 ### 4. The 2-Attempt Circuit Breaker
 - Limit any solution hypothesis to a **maximum of 2 attempts**:
@@ -189,13 +192,13 @@ Before touching any source file, the agent MUST output a 5-point proof card:
 
 ### 5. Bidirectional Reverse-Check Protocol
 When an approach fails twice, step back and execute a bidirectional trace:
-- **Forward Trace:** Admin Panel Event $\rightarrow$ Endpoint $\rightarrow$ Store/State $\rightarrow$ Router $\rightarrow$ Home Panel UI (Light & Dark).
+- **Forward Trace:** Admin Panel Event $\rightarrow$ Endpoint $\rightarrow$ Store/State $\rightarrow$ Router $\rightarrow$ Home Panel UI (Light & Dark, all Locales).
 - **Reverse Check:** Failure symptom $\rightarrow$ call stack backwards $\rightarrow$ parameter origin $\rightarrow$ data generator.
 - Find the exact point where caller expectations and callee behavior diverged.
 
 ### 6. Strict 3-Tier Verification Gate (Never Test Live if Static Fails)
 - **Gate 1 (Static):** Validate syntax and types (`tsc --noEmit` or parser check). If Gate 1 fails, halt.
-- **Gate 2 (Contract & Interconnectivity):** Verify logic, null checks, import validity, and Admin $\leftrightarrow$ Home panel data flow.
+- **Gate 2 (Contract, i18n & Interconnect Checks):** Verify logic, null checks, import validity, all locale keys, and Admin $\leftrightarrow$ Home portal data flow.
 - **Gate 3 (Live Retrying):** *Only* trigger live device (ARTEMIS) or browser verification once Gates 1 and 2 pass.
 
 ### 7. Platform Boundary & Hybrid App Awareness (Capacitor / Android / Web)
