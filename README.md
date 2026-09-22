@@ -90,7 +90,7 @@ Drop **Zero-Guess Debugger** into any AI coding tool in 10 seconds:
 ### For Google Antigravity / Gemini CLI
 Copy the skill folder into your global skills directory:
 ```bash
-git clone https://github.com/parinkukadia55/zero-guess-debugger.git ~/.gemini/config/skills/zero-guess-debugger
+git clone https://github.com/parinkukadia55/-zero-guess-debugger.git ~/.gemini/config/skills/zero-guess-debugger
 ```
 
 ### For Cursor IDE

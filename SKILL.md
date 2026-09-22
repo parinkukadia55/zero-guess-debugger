@@ -7,7 +7,7 @@ description: >-
 license: MIT
 metadata:
   author: Parin Kukadia
-  homepage: https://github.com/parinkukadia55/zero-guess-debugger
+  homepage: https://github.com/parinkukadia55/-zero-guess-debugger
   version: "1.0.0"
 ---
 
