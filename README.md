@@ -1,39 +1,49 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.1.0-blue.svg)](https://github.com/parinkukadia55/-zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.2.0-blue.svg)](https://github.com/parinkukadia55/-zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
 > **Stop AI coding assistants from burning your quota with blind trial-and-error.**  
-> An autonomous execution and debugging framework for AI agents. Combines **Goal Decomposition & Living Task Checklists** with strict **Zero-Hallucination**, **Pre-Fix Proof Cards**, **2-Attempt Circuit Breakers**, and **Bidirectional Reverse-Checking**.
+> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Goal Decomposition & Living Task Checklists**, **Full-Surface Interconnectivity Audits (Light/Dark Mode, Endpoints, Routes, Admin $\leftrightarrow$ Home Panels)** with strict **Zero-Hallucination**, **Pre-Fix Proof Cards**, **2-Attempt Circuit Breakers**, and **Bidirectional Reverse-Checking**.
 
 ---
 
-## 💥 The Pain: The AI Quota-Burning Loop
+## 💥 The Pain: Why AI Agents Fail on Complex Projects
 
-Have you ever watched an AI agent:
-1. Rush to edit files without defining a clear goal or understanding the requirements?
-2. Make speculative guesses without reading the source code?
-3. Break 3 other working features while attempting to fix one bug?
-4. Blindly re-run failed test commands 8 times in a row, draining your entire daily AI quota?
-5. Leave you in the dark about what it just did, what is running, and what remains?
+Most AI coding assistants suffer from three critical flaws:
+1. **Trial-and-Error Guessing:** They edit files blindly without reading source code, running in circles and burning 100,000+ tokens.
+2. **Context Amnesia:** They forget requirements discussed 3 turns ago in the chat thread.
+3. **Half-Baked Updates (Broken Interconnectivity):**
+   * They update a backend feature but **forget the UI components**.
+   * They add a button but **break Dark Mode** (white text on white background).
+   * They change a view but **forget to register the Route** or navigation link.
+   * They update an **Admin Panel** setting, but it **never connects or reflects in the Home/User Panel**.
 
-**Zero-Guess Debugger** permanently cures this behavior by giving the agent a structured **Planning & Execution Engine** paired with **Zero-Guess Debugging Discipline**.
+**Zero-Guess Debugger** permanently eliminates these failure modes by enforcing end-to-end discipline across every layer of the stack.
+
+---
+
+## 🧵 Phase 0: Cross-Thread Context Synthesis (Unified Chat Rule)
+
+Before planning or executing, the agent combines the entire conversation history:
+* Synthesizes all previously agreed constraints, design preferences, and architectural decisions.
+* Ensures that historical requirements (e.g. mobile responsiveness, offline support, theme compatibility) are never forgotten or dropped in subsequent turns.
 
 ---
 
 ## 🧭 Phase 1: Goal Planning & Task Decomposition
 
-Before writing or altering any code, the agent decomposes the user request into an explicit technical blueprint:
-
 ```mermaid
 flowchart TD
-    User["User Request / Feature Input"] --> Goal["1. Define Concrete Goal & Success Criteria"]
+    Chat["All Chat Threads & User Input"] --> Context["0. Cross-Thread Context Synthesis"]
+    Context --> Goal["1. Define Concrete Goal & Success Criteria"]
     Goal --> Req["2. Audit Requirements (What is Required & How it is Built)"]
     Req --> Tasks["3. Generate Living Task Checklist (Task 1, 2, 3...)"]
-    Tasks --> Exec["4. Sequential Execution (One-by-One with Live Status)"]
-    Exec --> Done["5. Verified Delivery"]
+    Tasks --> Inter["4. Full-Surface Interconnectivity Audit"]
+    Inter --> Exec["5. Sequential One-by-One Execution"]
+    Exec --> Done["6. Verified Delivery"]
 ```
 
 1. **Goal Formulation:** Restate the objective in unambiguous technical terms.
@@ -45,21 +55,46 @@ flowchart TD
 
 ## ⚡ Phase 2: Sequential Step-by-Step Execution & Live Tracking
 
-The agent executes the plan **one task at a time**, broadcasting real-time progress to the user after each step:
+The agent executes the plan **one task at a time**, broadcasting real-time progress after each step:
 
 ```markdown
 ### 📋 Execution Progress
 - [x] **Task 1: Define TypeScript schemas and contracts** — *Completed (Added `types/astrology.ts`)*
 - [x] **Task 2: Implement core computation engine** — *Completed (Verified with unit tests)*
-- [>] **Task 3: Build UI view component** — *IN PROGRESS*
-- [ ] Task 4: Run 3-Tier Verification Gate — *Pending*
+- [>] **Task 3: Build UI view component with Light & Dark Mode** — *IN PROGRESS*
+- [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
+- [ ] Task 5: Run 3-Tier Verification Gate — *Pending*
 ```
-
-No more mysterious agent silences or massive, unchecked code dumps. You always know exactly what has been completed, what is currently running, and what comes next.
 
 ---
 
-## 🔒 Phase 3: The Zero-Guess Debugging Protocol
+## 🌐 Phase 3: Full-Surface Interconnectivity Audit (Anti-Partial-Update Shield)
+
+Before marking any task complete, the agent audits all 6 interconnected surfaces:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                   FULL-SURFACE INTERCONNECTIVITY MAP                        │
+├──────────────────────────────┬──────────────────────────────────────────────┤
+│ 1. API Endpoints & Handlers  │ Controller, routes, payload validation & DB   │
+│ 2. Routing & Navigation      │ Router table, navbar/sidebar links, guards   │
+│ 3. State Management & Store  │ Stores, reducers, caching, reactive sync     │
+│ 4. UI Components (Dual-Mode) │ Both Light Mode AND Dark Mode explicitly styled│
+│ 5. Cross-Panel Connectivity  │ Admin Panel controls <───> Home/User Panel   │
+│ 6. Error & Boundary States   │ Skeletons, empty states, error toasts        │
+└──────────────────────────────┴──────────────────────────────────────────────┘
+```
+
+1. **API Endpoints:** Controller, routes, payload validation, error codes.
+2. **Routing & Navigation:** Router definitions, navbars, sidebars, breadcrumbs.
+3. **Dual-Theme UI (Light & Dark Mode):** Explicit styling for both modes. Zero hardcoded `#fff` or `#000` color collisions.
+4. **Cross-Panel Interconnectivity (Admin Panel $\leftrightarrow$ Home / User Panel):**
+   * *Check what connects and where:* Verify Admin controls $\rightarrow$ API $\rightarrow$ Database $\rightarrow$ Client Store $\rightarrow$ Home Panel UI.
+   * Verify changes saved in the Admin panel immediately and accurately reflect in the Home/User view.
+
+---
+
+## 🔒 Phase 4: The Zero-Guess Debugging Protocol
 
 When any bug, exception, or test failure occurs during execution or live testing:
 
@@ -91,7 +126,7 @@ When any bug, exception, or test failure occurs during execution or live testing
                       ┌────────────────────────────────────────┐
                       │ 5. Strict 3-Tier Verification Gate     │
                       │ Gate 1: Static (tsc --noEmit)          │
-                      │ Gate 2: Contract & Logic Checks        │
+                      │ Gate 2: Contract & Interconnect Checks │
                       │ Gate 3: Verified Live Testing          │
                       └────────────────────────────────────────┘
 ```
@@ -106,12 +141,12 @@ When any bug, exception, or test failure occurs during execution or live testing
    - [LOCATION]    : Exact file path, function, and verified line numbers.
    - [ROOT CAUSE]  : Mechanical failure explanation.
    - [SURGICAL FIX]: Concrete change addressing the origin.
-   - [BLAST RADIUS]: All callers audited via grep_search.
+   - [BLAST RADIUS]: All callers, routes, endpoints, and panels audited via grep_search.
    ```
 3. **Blast Radius & Regression Shield:** Audit all consumers before altering shared functions.
 4. **The 2-Attempt Circuit Breaker:** Maximum 2 attempts per solution hypothesis. If Attempt 2 fails, **HALT** and trigger a Reverse Check.
-5. **Bidirectional Reverse-Check:** Trace forward from user event to output; trace backwards from error stack to data origin.
-6. **Strict 3-Tier Verification Gate:** Gate 1 (Static: `tsc --noEmit`) $\rightarrow$ Gate 2 (Contract check) $\rightarrow$ Gate 3 (Live device/browser testing).
+5. **Bidirectional Reverse-Check:** Trace forward: `Admin Panel -> Endpoint -> Store -> Router -> Home UI (Light/Dark)`; trace backward from error stack to data origin.
+6. **Strict 3-Tier Verification Gate:** Gate 1 (Static: `tsc --noEmit`) $\rightarrow$ Gate 2 (Contract & Interconnect check) $\rightarrow$ Gate 3 (Live device/browser testing).
 7. **Platform Boundary Awareness:** Storage sandboxing (`localStorage` fallbacks), camera stream teardown (`track.stop()`), and native overrides for Android/Capacitor.
 8. **Patch Minimalism:** Surgical fixes (under 20–30 lines). No symptom-masking with empty catches or arbitrary timeouts.
 
@@ -159,7 +194,8 @@ cp rules/AGENTS.md /path/to/your/project/AGENTS.md
 | **Turns to Deliver Task** | 8 – 15 turns | **1 – 3 structured turns** |
 | **Token / Quota Usage** | ~180,000 tokens | **~14,000 tokens (92% savings)** |
 | **Files Modified** | 4 – 7 files (high risk of regression) | **1 – 2 files (surgical precision)** |
-| **Visibility / Transparency** | Unknown (agent works in secret) | **Live Task Checklist updated per step** |
+| **Dual-Theme Support** | Often broken in Dark Mode | **100% verified in Light & Dark Mode** |
+| **Cross-Panel Sync** | Admin $\leftrightarrow$ Home frequently desynced | **Full E2E Interconnectivity Verified** |
 | **Cascading Regressions** | Frequent (unnoticed until runtime) | **Zero (guaranteed by Blast Radius check)** |
 
 ---

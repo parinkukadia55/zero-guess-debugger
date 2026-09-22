@@ -1,21 +1,32 @@
 ---
 name: zero-guess-debugger
 description: >-
-  Stop AI coding agents from burning your quota with blind trial-and-error. Enforces goal definition,
-  prerequisite analysis, living task checklists, sequential step-by-step execution with live completion
-  updates, zero-hallucination, mandatory pre-fix diagnostic cards, 2-attempt circuit breakers,
-  bidirectional reverse-checking, and strict 3-tier verification gates.
+  Stop AI coding agents from burning your quota with blind trial-and-error. Enforces cross-thread
+  context synthesis, goal definition, prerequisite analysis, living task checklists, sequential
+  step-by-step execution with live completion updates, full-surface interconnectivity (endpoints,
+  routes, light/dark mode UI, admin/home panel wiring), zero-hallucination, mandatory pre-fix
+  diagnostic cards, 2-attempt circuit breakers, bidirectional reverse-checking, and strict 3-tier
+  verification gates.
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/-zero-guess-debugger
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
 > **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Goal Decomposition & Living Task Checklists** with an **Anti-Trial-and-Error Zero-Guess Debugging Protocol**.
+> Combines **Cross-Thread Context Synthesis**, **Goal Planning & Living Task Checklists**, **Full-Surface Interconnectivity Audits (Light/Dark Mode, Routes, Endpoints, Admin/Home Panels)** with an **Anti-Trial-and-Error Zero-Guess Debugging Protocol**.
+
+---
+
+## 🧵 Phase 0: Cross-Thread Context Synthesis (The Unified Chat Rule)
+
+Before generating any plan or touching code, the agent MUST synthesize the entire conversation history:
+1. **Combine All Thread Decisions:** Gather all requirements, architectural constraints, design decisions, and preferences stated across previous user messages and turns.
+2. **Never Drop Historical Context:** Never omit previously agreed features (e.g. dual-theme support, mobile responsiveness, offline fallbacks, or role permissions) when working on new tasks.
+3. **Explicit Assumption Check:** If the user request relates to a previously discussed module or panel, trace the dependency chain before proceeding.
 
 ---
 
@@ -43,7 +54,8 @@ Break down the implementation into atomic, sequential milestones:
 - [ ] Task 1: [Short Actionable Title] — Description of deliverables
 - [ ] Task 2: [Short Actionable Title] — Description of deliverables
 - [ ] Task 3: [Short Actionable Title] — Description of deliverables
-- [ ] Task 4: 3-Tier Verification Gate (Static -> Contract -> Live)
+- [ ] Task 4: Full-Surface Interconnectivity Audit (Light/Dark, Endpoints, Routes, Panels)
+- [ ] Task 5: 3-Tier Verification Gate (Static -> Contract -> Live)
 ```
 
 ---
@@ -58,14 +70,62 @@ Execute the task checklist **strictly one-by-one**:
    ### 📋 Execution Progress
    - [x] **Task 1: Define TypeScript schemas and contracts** — *Completed (Added `types/astrology.ts`)*
    - [>] **Task 2: Implement computation logic** — *IN PROGRESS*
-   - [ ] Task 3: Build UI view component — *Pending*
-   - [ ] Task 4: Run 3-Tier Verification Gate — *Pending*
+   - [ ] Task 3: Build UI view component with Light & Dark mode — *Pending*
+   - [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
+   - [ ] Task 5: Run 3-Tier Verification Gate — *Pending*
    ```
-3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 3) to solve the root cause before moving forward.
+3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 4) to solve the root cause before moving forward.
 
 ---
 
-## 🔒 Phase 3: The Zero-Guess Debugging Protocol
+## 🌐 Phase 3: Full-Surface Interconnectivity Audit (Anti-Partial-Update Shield)
+
+A major failure mode of AI coding agents is delivering "half-baked" updates—modifying backend logic while forgetting UI components, breaking Dark Mode, leaving routes orphaned, or disconnecting the Admin Panel from the Home Panel.
+
+Before any feature or bug fix is considered complete, the agent MUST audit all 6 interconnected surfaces:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                   FULL-SURFACE INTERCONNECTIVITY MAP                        │
+├──────────────────────────────┬──────────────────────────────────────────────┤
+│ 1. API Endpoints & Handlers  │ Controller, routes, payload validation & DB   │
+│ 2. Routing & Navigation      │ Router table, navbar/sidebar links, guards   │
+│ 3. State Management & Store  │ Stores, reducers, caching, reactive sync     │
+│ 4. UI Components (Dual-Mode) │ Both Light Mode AND Dark Mode explicitly styled│
+│ 5. Cross-Panel Connectivity  │ Admin Panel controls <───> Home/User Panel   │
+│ 6. Error & Boundary States   │ Skeletons, empty states, error toasts        │
+└──────────────────────────────┴──────────────────────────────────────────────┘
+```
+
+### 1. API Endpoints & Server Handlers
+- Verify that the backend endpoint or serverless function is created or updated.
+- Verify request payload validation, HTTP status codes, and response JSON schemas.
+
+### 2. Routing & Navigation
+- Verify that new or modified views are registered in the router configuration.
+- Verify that navigation bars, sidebars, breadcrumbs, and deep links point to the correct route.
+
+### 3. State Management & Store
+- Verify that client-side stores (Context, Zustand, Redux, or vanilla state) hold the updated state and trigger re-renders properly.
+
+### 4. Dual-Theme UI Component Audit (Light & Dark Mode)
+- **Zero Color Collisions:** Verify that every component is styled for **both Light Mode AND Dark Mode**.
+- **No Hardcoded Defaults:** Ban raw `#ffffff`, `#000000`, `bg-white`, or `text-black` without explicit dark counterparts (e.g. `dark:bg-slate-900 dark:text-white`).
+- Ensure borders, placeholders, muted text, icons, and cards maintain WCAG contrast across both themes.
+
+### 5. Cross-Panel Interconnectivity (Admin Panel $\leftrightarrow$ Home / User Panel)
+- **Check What Connects and Where:**
+  - If a feature has administrative settings, verify the **Admin Panel** has the controls (toggles, forms, actions).
+  - Verify that saving in the Admin Panel updates the backend/database.
+  - Verify that the **Home / User Panel** immediately reflects the changes made in the Admin Panel.
+  - Confirm permissions and role-based access rules between panels.
+
+### 6. Edge, Loading & Fallback States
+- Verify empty states ("No items found"), loading spinners/skeletons, and error toasts.
+
+---
+
+## 🔒 Phase 4: The Zero-Guess Debugging Protocol
 
 When encountering any error, bug, test failure, or unexpected behavior during execution or live testing:
 
@@ -97,7 +157,7 @@ When encountering any error, bug, test failure, or unexpected behavior during ex
                       ┌────────────────────────────────────────┐
                       │ 5. Strict 3-Tier Verification Gate     │
                       │ Gate 1: Static (tsc --noEmit)          │
-                      │ Gate 2: Contract & Logic Checks        │
+                      │ Gate 2: Contract & Interconnect Checks │
                       │ Gate 3: Verified Live Testing          │
                       └────────────────────────────────────────┘
 ```
@@ -113,8 +173,8 @@ Before touching any source file, the agent MUST output a 5-point proof card:
 - [SYMPTOM]     : Verbatim error message, status code, or observable defect.
 - [LOCATION]    : Exact file path, function name, and verified line numbers.
 - [ROOT CAUSE]  : The exact mechanical failure mechanism.
-- [SURGICAL FIX]]: Proposed change curing the root defect at the origin.
-- [BLAST RADIUS]: All callers and consumers audited via grep_search.
+- [SURGICAL FIX]: Proposed change curing the root defect at the origin.
+- [BLAST RADIUS]: All callers, routes, endpoints, and panels audited via grep_search.
 ```
 
 ### 3. Blast Radius & Regression Shield
@@ -129,13 +189,13 @@ Before touching any source file, the agent MUST output a 5-point proof card:
 
 ### 5. Bidirectional Reverse-Check Protocol
 When an approach fails twice, step back and execute a bidirectional trace:
-- **Forward Trace:** User event $\rightarrow$ listener $\rightarrow$ handler $\rightarrow$ state/engine $\rightarrow$ failing output.
+- **Forward Trace:** Admin Panel Event $\rightarrow$ Endpoint $\rightarrow$ Store/State $\rightarrow$ Router $\rightarrow$ Home Panel UI (Light & Dark).
 - **Reverse Check:** Failure symptom $\rightarrow$ call stack backwards $\rightarrow$ parameter origin $\rightarrow$ data generator.
 - Find the exact point where caller expectations and callee behavior diverged.
 
 ### 6. Strict 3-Tier Verification Gate (Never Test Live if Static Fails)
 - **Gate 1 (Static):** Validate syntax and types (`tsc --noEmit` or parser check). If Gate 1 fails, halt.
-- **Gate 2 (Contract):** Verify logic, null checks, and imports against actual declarations.
+- **Gate 2 (Contract & Interconnectivity):** Verify logic, null checks, import validity, and Admin $\leftrightarrow$ Home panel data flow.
 - **Gate 3 (Live Retrying):** *Only* trigger live device (ARTEMIS) or browser verification once Gates 1 and 2 pass.
 
 ### 7. Platform Boundary & Hybrid App Awareness (Capacitor / Android / Web)
