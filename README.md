@@ -1,12 +1,12 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.6.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
 > **Stop AI coding assistants from burning your quota with blind trial-and-error.**  
-> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, and an **End-of-Run Broken Item Eyesight Triage**.
+> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, and an **End-of-Run Broken Item Eyesight Triage**.
 
 ---
 
@@ -22,6 +22,9 @@ Most AI coding assistants struggle in real-world production codebases:
    * They update an **Admin Panel** toggle, but it **never connects or reflects in the User/Home Panel**.
    * They add a button but **break Dark Mode** (white text on white background).
    * They change a view on the Web but break the **Mobile (Capacitor/React Native)** shell.
+7. **Testing Stale Builds (False Bug Spirals):**
+   * They modify code but execute tests against an outdated APK or bundle whose file timestamp is older than the code changes!
+   * The test predictably fails against the old build, triggering panic-rewrites of perfectly working code and burning hundreds of thousands of tokens on phantom issues.
 
 **Zero-Guess Debugger** permanently eliminates these failure modes by giving the user **100% Eyesight** into their system and enforcing end-to-end discipline.
 
@@ -66,7 +69,7 @@ The agent executes the plan **one task at a time**, broadcasting real-time progr
 - [x] **Task 2: Implement core computation engine** — *Completed (Verified with unit tests)*
 - [>] **Task 3: Multi-Language Parity (en, hi, gu dictionaries)** — *IN PROGRESS*
 - [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
-- [ ] Task 5: Run 3-Tier Verification Gate — *Pending*
+- [ ] Task 5: Run 3-Tier Verification Gate (with Stale-Build Guard) — *Pending*
 - [ ] Task 6: Broken Button, Route & Endpoint Eyesight Report — *Pending*
 ```
 
@@ -166,10 +169,11 @@ When any bug, exception, or test failure occurs during execution or live testing
                       │ Gate 1: Static (tsc --noEmit)          │
                       │ Gate 2: Contract & Interconnect Checks │
                       │ Gate 3: Verified Live Testing          │
+                      │         (with Stale-Build Guard)       │
                       └────────────────────────────────────────┘
 ```
 
-### The 8 Core Safeguards
+### The 9 Core Safeguards
 
 1. **Zero-Hallucination Mandate:** Never assume API signatures, props, or file paths without verifying source code.
 2. **Mandatory Pre-Fix Diagnostic Card:**
@@ -184,9 +188,43 @@ When any bug, exception, or test failure occurs during execution or live testing
 3. **Blast Radius & Regression Shield:** Audit all consumers before altering shared functions.
 4. **The 2-Attempt Circuit Breaker:** Maximum 2 attempts per solution hypothesis. If Attempt 2 fails, **HALT** and trigger a Reverse Check.
 5. **Bidirectional Reverse-Check:** Trace forward: `Admin Panel -> Endpoint -> Store -> Router -> Home UI (Light/Dark, all Locales)`; trace backward from error stack to data origin.
-6. **Strict 3-Tier Verification Gate:** Gate 1 (Static: `tsc --noEmit`) $\rightarrow$ Gate 2 (Contract, i18n & Interconnect checks) $\rightarrow$ Gate 3 (Live device/browser testing).
+6. **Strict 3-Tier Verification Gate:** Gate 1 (Static: `tsc --noEmit`) $\rightarrow$ Gate 2 (Contract, i18n & Interconnect checks) $\rightarrow$ Gate 3 (Live device/browser testing with Stale-Build Guard).
 7. **Platform Boundary Awareness:** Storage sandboxing (`localStorage` fallbacks), camera stream teardown (`track.stop()`), and native overrides for Android/Capacitor.
 8. **Patch Minimalism:** Surgical fixes (under 20–30 lines). No symptom-masking with empty catches or arbitrary timeouts.
+9. **Stale-Build Guard & Timestamp Verification:** Always verify debug/release app date and timestamp against source code edits before live testing. If the binary is older or missing, trigger a fresh rebuild before running any test.
+
+### ⏱️ The Stale-Build Guard & Timestamp Verification Protocol (Before ANY Live Testing)
+
+Never run automated or manual live tests (ARTEMIS, Playwright, Espresso, Android APK, or browser preview) against a stale build artifact:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 STALE-BUILD GUARD & TIMESTAMP DECISION TREE                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. Check Target Artifact Timestamp  (e.g. app-debug.apk / dist/index.html)  │
+│ 2. Check Latest Source Timestamp    (e.g. src/**, public/**, config files)  │
+│                                                                             │
+│ [ Artifact Time < Source Time ] ──► STALE BUILD DETECTED!                   │
+│                                     • BANNED: Do NOT run tests              │
+│                                     • ACTION: Trigger clean rebuild & sync  │
+│                                     • VERIFY: Check new timestamp > source  │
+│                                     • DEPLOY: Install fresh binary to device│
+│                                     • ONLY THEN execute live testing        │
+│                                                                             │
+│ [ Artifact Time >= Source Time ] ─► BUILD FRESH & UP-TO-DATE!               │
+│                                     • Proceed safely to live verification   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **Compare Timestamps Prior to Test Execution:**
+   - **Target Artifact:** Query `LastWriteTime` of the active debug or release app binary (`android/app/build/outputs/apk/debug/app-debug.apk`, `android/app/build/outputs/apk/release/app-release.apk`, `dist/index.html`, etc.).
+   - **Source Code Changes:** Query `LastWriteTime` of the latest modified source files (`src/`, `www/`, `android/`, etc.).
+2. **Prevent False-Failure Spirals:**
+   - Testing against an outdated APK or bundle causes agents to see bugs that were already fixed in code, leading to phantom regressions, false diagnostic cards, and quota exhaustion.
+3. **Mandatory Fresh Rebuild Action:**
+   - If the artifact is older than source changes or missing, immediately execute the build pipeline (`npm run build`, `npx cap sync`, `./gradlew assembleDebug` or `./gradlew assembleRelease`).
+   - Confirm the new binary's timestamp is strictly newer than the source changes.
+   - Deploy/reinstall the fresh binary to the connected device or emulator before running assertions.
 
 ---
 

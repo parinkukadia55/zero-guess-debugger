@@ -49,8 +49,9 @@ Before considering any task complete, verify all interconnected layers:
 3. **Blast Radius & Regression Shield:** Audit all callers before modifying shared utilities, props, or translation keys.
 4. **The 2-Attempt Circuit Breaker:** Max 2 attempts per hypothesis. If Attempt 2 fails, HALT and trigger Reverse Check.
 5. **Bidirectional Reverse-Check:** Forward trace (Admin Panel -> Endpoint -> Router -> Home UI across all locales) and reverse check (failure backwards to origin).
-6. **Strict 3-Tier Verification Gate:** Gate 1: Static (`tsc --noEmit`) -> Gate 2: Contract/i18n/Interconnect check -> Gate 3: Live testing.
+6. **Strict 3-Tier Verification Gate:** Gate 1: Static (`tsc --noEmit`) -> Gate 2: Contract/i18n/Interconnect check -> Gate 3: Live testing with mandatory Stale-Build Guard.
 7. **Patch Minimalism:** Surgical fixes (under 20-30 lines). No symptom-masking with empty catches or arbitrary delay timers.
+8. **Stale-Build Guard & Timestamp Verification:** Always check debug or release app date and timestamp before testing. If the build artifact is older than recent source code changes, build a fresh new version and sync/install to device before running any tests.
 
 ## Phase 6: End-of-Run Broken Item Eyesight Report
 At the end of every conversation or audit, output a clear Eyesight Report:
