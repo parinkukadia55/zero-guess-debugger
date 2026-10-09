@@ -8,18 +8,18 @@ description: >-
   native AI image/video generation models, zero-hallucination, mandatory pre-fix diagnostic cards,
   2-attempt circuit breakers, bidirectional reverse-checking, strict 3-tier verification gates with
   stale-build timestamp guards, persistent feature memory board (MEMORY_BOARD.md) with full-repo anti-misplacement scans,
-  and end-of-run eyesight triage reports for broken buttons, routes, and endpoints.
+  end-of-run eyesight triage reports, and autonomous self-healing closed-loop audits (Plan -> Memorize -> Task -> Code -> Error & Security Audit -> Rectify -> 100% Outcome Loop across UI/UX, Routes, APIs, Backend, and Security).
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/zero-guess-debugger
-  version: "1.7.0"
+  version: "1.8.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
 > **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, and an **End-of-Run Broken Item Eyesight Triage**.
+> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, and an **Autonomous Self-Healing Closed-Loop Engine (100% Verification across UI/UX, Routes, APIs, Backend & Security)**.
 
 ---
 
@@ -322,3 +322,79 @@ Whenever the user asks to **"scan full repo"**, **"scan all files"**, or **"audi
 Before creating any new component, altering routes, or debugging:
 - **ALWAYS inspect `MEMORY_BOARD.md` first.**
 - Never blindly recreate an existing feature or overwrite an established route without verifying its registry on the board.
+
+---
+
+## 🔄 Phase 9: Autonomous Self-Healing Closed-Loop & Full-Stack Security Engine (The 100% Outcome Loop)
+
+> **Mandatory Universal Execution Rule:** Applies across **any AI agent, CLI (`agy`, Claude Code, Cursor, Windsurf), API integration, automated runner, or script**. First Plan & Memorize, construct atomic task lists, code exhaustively, run 4-layer audits (including deep security vulnerability scans), record findings in `MEMORY_BOARD.md`, and **continuously loop until 100% operational and security certainty is achieved**.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│              AUTONOMOUS SELF-HEALING CLOSED LOOP (100% OUTCOME GATE)        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  1. PLAN & MEMORIZE     ──► Read & sync MEMORY_BOARD.md, historical context │
+│            │                                                                │
+│            ▼                                                                │
+│  2. ATOMIC TASK LIST    ──► Ordered task checklist, explicit deliverables   │
+│            │                                                                │
+│            ▼                                                                │
+│  3. EXHAUSTIVE CODING   ──► 100% complete production code (zero truncation) │
+│            │                                                                │
+│            ▼                                                                │
+│  4. 4-DIMENSIONAL AUDIT ──► UI/UX + Routes/APIs + Backend + Security Scans  │
+│            │                                                                │
+│            ▼                                                                │
+│  5. RECTIFY IN MEMORY   ──► Log defects/security findings on MEMORY_BOARD   │
+│            │                                                                │
+│      Errors/Flaws Found?                                                    │
+│       YES ───────────────► Re-enter Stage 3 (Surgical Fix & Code)           │
+│       NO  (100% Pass)   ──► Verification Gate Passed ──► COMPLETE           │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### The 6-Stage Autonomous Loop Cycle:
+
+1. **Stage 1: Plan & Memorize:**
+   - Consult `MEMORY_BOARD.md` to load the current system state, registered features, routes, and past incident rectifications.
+   - Absorb all cross-thread constraints so no established behavior is dropped.
+2. **Stage 2: Atomic Task Checklist:**
+   - Deconstruct user intent into sequential, ordered tasks (`Task 1`, `Task 2`, ...).
+3. **Stage 3: Exhaustive Production Coding:**
+   - Author 100% complete, fully articulated code. No placeholders, no `// TODO` stubs, no omissions.
+4. **Stage 4: 4-Dimensional Full-Stack & Security Audit:**
+   - Concurrently audit all 4 critical software dimensions (UI/UX, Routes/APIs, Backend/State, Security).
+5. **Stage 5: Memory Board Task Rectification:**
+   - Update `MEMORY_BOARD.md`: Log all newly identified bugs, edge cases, and security vulnerabilities under `Known Problems / Notes` and update their health states.
+6. **Stage 6: The 100% Closed Loop Gate:**
+   - If ANY test fails, lint errors arise, routes 404, dark/light themes collide, or security flaws are discovered:
+     - **DO NOT STOP.** Re-enter Stage 3, apply surgical fixes, re-audit, and update the rectification log.
+     - **Continue the loop until every layer achieves a 100% operational score.**
+
+---
+
+### The 4-Dimensional Full-Stack & Security Inspection Matrix
+
+Every change must pass all 4 dimensions before completion:
+
+#### 1. 🎨 UI / UX Experience & Interactive Logic
+- **Interactive States:** Loading skeletons/spinners, disabled button states during async calls, error toast feedback, and empty data states.
+- **Dual-Theme Contrast Parity:** Explicit styling for **both** Light Mode and Dark Mode. Verify text legibility, card backgrounds, and border colors in both modes.
+- **Viewport & Touch Layout:** Safe areas (notch, dynamic island, status bar), Android keyboard resize behavior, mobile tap targets ($\ge 44 \times 44\text{px}$), and text expansion tolerance ($+30\%$ Indic/multilingual buffer).
+
+#### 2. 🛣️ Routes, Navigation & Deep-Link Integrity
+- **Route Table Verification:** All route paths (`/path`), deep links (`#view-*`, parameters), and modal triggers explicitly registered in the router table.
+- **Navigation & Guard Logic:** Auth protection, unauthenticated redirects, history back-button behavior, and query string state preservation.
+- **Broken Element Prohibition:** Zero dead links, zero unhandled `onclick` stubs, zero unmounted view templates.
+
+#### 3. ⚙️ API Contracts, Backend & State Hygiene
+- **Schema & Payload Contracts:** Parameter typing, request validation, response parsing, and explicit status code handling (`200 OK`, `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `500 Server Error`).
+- **State Synchronization:** Optimistic updates vs server state reconciliation, cache invalidation, and race condition prevention.
+- **Resource & Lifecycle Safety:** Unsubscribe event listeners, close SSE/WebSocket streams, stop camera tracks (`track.stop()`), clear timers/intervals, and provide graceful offline fallback (`localStorage`).
+
+#### 4. 🛡️ Security Vulnerability & Hardening Defense
+- **Zero Hardcoded Secrets:** No API keys, database passwords, private tokens, or JWT secrets exposed in client-side code, git tracking, or public bundles.
+- **Injection & XSS Sanitization:** All user inputs escaped before DOM insertion or query execution (`textContent` over `innerHTML`, parameterized queries).
+- **CORS, Auth & Storage Hardening:** Token storage validation (secure cookie / sandboxed storage), origin verification, permission/role boundary enforcement.
+- **Safe Fallbacks:** Graceful degradation on network failure, preventing stack trace or sensitive error disclosure to client UI.
+

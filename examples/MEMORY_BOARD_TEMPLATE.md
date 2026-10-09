@@ -4,34 +4,39 @@
 > *Project:* [Project Name]  
 > *Last Scanned / Synced:* [YYYY-MM-DD HH:MM:SS]  
 > *Health Summary:* Total Features: 0 | Operational: 0 | Degraded: 0 | Broken: 0 | In Rectification: 0  
+> *Security Compliance:* Zero Hardcoded Secrets | XSS/Injection Sanitized | Auth Guards Verified  
 
 ---
 
 ## 🗺️ Feature Registry Matrix
 
-| ID | Feature Name | Domain / Portal | Route / View File | Backing Logic / Endpoints | Health Status | Known Problems / Notes | Rectification History |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `FEAT-001` | [Feature Name] | [Web / User / Admin / Mobile] | `[/route]`, `[Component.tsx:line]` | `[service.ts::function]` | `🟢 Operational` | None | Initial scan |
+| ID | Feature Name | Domain / Portal | Route / View File | Backing Logic / Endpoints | Health Status | UI/UX & Security Audit | Known Problems / Notes | Rectification History |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `FEAT-001` | [Feature Name] | [Web / User / Admin / Mobile] | `[/route]`, `[Component.tsx:line]` | `[service.ts::function]` | `🟢 Operational` | ✅ Contrast OK, ✅ Sanitized | None | Initial scan |
 
 ---
 
-## 🛠️ Rectification Log & Incident Ledger
+## 🛠️ Rectification Log & Security Incident Ledger
 
 ### `FEAT-001`: [Feature Name]
 - **[Incident Date]:** YYYY-MM-DD
-- **[Problem Observed]:** Description of defect or missing link.
-- **[Root Cause]:** Exact mechanical failure mechanism.
-- **[Rectification Applied]:** Summary of fix, modified files, and verification steps.
-- **[Resolution Status]:** `🟢 Resolved` / `🟡 Monitoring` / `🔴 Unresolved`
+- **[Problem Observed]:** Description of defect, UI theme clash, route 404, or security finding.
+- **[Layer Affected]:** `🎨 UI/UX` | `🛣️ Route` | `⚙️ API/Backend` | `🛡️ Security`
+- **[Root Cause]:** Exact mechanical failure or vulnerability mechanism.
+- **[Rectification Applied]:** Summary of surgical fix, modified files, and verification steps.
+- **[Security Audit Check]:** Secrets scan passed, input sanitization verified, no client token leakage.
+- **[Resolution Status]:** `🟢 Resolved (100% Operational & Secure)`
 
 ---
 
-## 🔍 Full-Repo Scan & Anti-Misplacement Protocol
-Whenever requested to scan the repository:
-1. Load this `MEMORY_BOARD.md` to restore baseline awareness of all known features.
-2. Traverse all route tables, pages, components, handlers, and endpoints.
-3. Compare live codebase against this matrix:
-   - Mark new features with next sequential `FEAT-XXX` ID.
-   - Flag misplaced or missing features previously marked as operational.
-   - Verify health and document open problems.
-4. Save and commit updated `MEMORY_BOARD.md` to prevent context amnesia across future sessions.
+## 🔍 Autonomous Closed-Loop Verification Protocol
+Whenever executing any feature, bug fix, or repo scan:
+1. **Plan & Memorize:** Read this `MEMORY_BOARD.md` to load full spatial memory and past rectifications.
+2. **Task List & Code:** Execute sequential milestones delivering 100% complete production code.
+3. **4-Dimensional Audit:**
+   - 🎨 **UI/UX:** Check loading/empty states, Light/Dark mode contrast, and responsive layout.
+   - 🛣️ **Routes:** Confirm all paths, deep links, and modal triggers are registered without dead ends.
+   - ⚙️ **API/Backend:** Validate payload contracts, status codes, and proper resource disposal.
+   - 🛡️ **Security:** Confirm zero hardcoded secrets, escape inputs, enforce auth boundaries.
+4. **Rectify & Loop:** Log any flaw on this board, apply surgical fix, and re-audit until **100% verification certainty** is achieved.
+5. **Persist:** Commit updated `MEMORY_BOARD.md` to disk for cross-thread permanence.

@@ -82,3 +82,15 @@ At the end of every conversation or audit, output a clear Eyesight Report:
 - **Full-Repo Scan Mandate:** When scanning repository or folders, traverse all views, routes, handlers, and APIs; cross-check against `MEMORY_BOARD.md` to catch misplaced, unlinked, or forgotten features.
 - **Problem & Rectification Ledger:** Log all discovered defects, track health (`🟢 Operational`, `🟡 Degraded`, `🔴 Broken`), and record fix histories for every feature.
 - **Pre-Action Check:** Always inspect the Memory Board before adding or refactoring features to prevent duplicate reinvention or route collisions.
+
+---
+
+### Phase 8: Autonomous Self-Healing Closed-Loop & Full-Stack Security Engine
+- **Universal Mandate:** Applies across any AI CLI, API, script, or IDE workflow.
+- **Closed-Loop Cycle:** Plan & Memorize (`MEMORY_BOARD.md`) ➔ Atomic Task List ➔ Exhaustive Coding ➔ 4-Dimensional Audit ➔ Memory Board Rectification ➔ Loop until 100% result achieved.
+- **4-Dimensional Audit Matrix:**
+  1. `🎨 UI/UX Logic:` Loading/disabled/error states, explicit **Light AND Dark Mode** contrast parity, viewport safe-areas.
+  2. `🛣️ Routes & Navigation:` Router table registration, deep links, auth guards, zero unhandled `onclick` stubs.
+  3. `⚙️ API & Backend:` Schema validation, explicit HTTP status codes (`200`/`400`/`401`/`500`), resource teardown (listeners, streams).
+  4. `🛡️ Security & Hardening:` Zero hardcoded secrets, input sanitization (XSS/injection defense), CORS/storage sandboxing.
+- **Loop to 100% Success:** Never stop at first-draft code. If flaws or vulnerabilities exist, log on `MEMORY_BOARD.md`, fix immediately, re-audit, and repeat until 100% operational certainty.
