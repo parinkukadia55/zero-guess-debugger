@@ -1,12 +1,12 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.8.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.9.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
 > **Stop AI coding assistants from burning your quota with blind trial-and-error.**  
-> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, and an **Autonomous Self-Healing Closed-Loop Engine (100% Verification across UI/UX, Routes, APIs, Backend & Security)**.
+> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, **Autonomous Self-Healing Closed-Loop Engine (100% Verification across UI/UX, Routes, APIs, Backend & Security)**, **Notification & Tech Stack Fidelity**, **The Clarification Gate (No Autonomous Speculation)**, and **Lean Code Minimalism (Anti-Bloat Surgical Engineering)**.
 
 ---
 
@@ -28,6 +28,9 @@ Most AI coding assistants struggle in real-world production codebases:
 8. **Premature Completion & Security Blind Spots:**
    * They stop at "first draft" without verifying whether UI/UX interactive states, dark/light contrast, route deep links, or backend payloads actually work.
    * They leave severe security holes: hardcoded credentials, unescaped user inputs (XSS), missing auth guards, or unhandled 500 error cascades.
+9. **Tech Stack & Notification Hallucination:** They swap the user's established notification mechanisms (Capacitor LocalNotifications, FCM) or tech stack for random unrequested libraries.
+10. **Autonomous Guessing Under Ambiguity:** Faced with ambiguous requirements or triggers, they make silent, speculative assumptions instead of asking the user for confirmation.
+11. **Code Bloat & Over-Engineering:** They generate hundreds of lines of redundant wrappers, complex classes, and boilerplate when a clean, minimal 10-line native implementation is optimal.
 
 **Zero-Guess Debugger** permanently eliminates these failure modes by giving the user **100% Eyesight** into their system and enforcing end-to-end discipline.
 
@@ -352,6 +355,32 @@ Every task must audit and verify all 4 software dimensions before completion:
 
 ---
 
+## 🎯 Phase 10: Notification & Tech Stack Fidelity, The Clarification Gate & Lean Code Minimalism
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│          PHASE 10: FIDELITY, CLARIFICATION GATE & LEAN CODE MANDATES         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. TECH & NOTIFICATION FIDELITY ──► User choices are absolute. Zero swapping│
+│ 2. CLARIFICATION GATE           ──► Confused / ambiguous? ASK USER before!   │
+│ 3. LEAN CODE MINIMALISM         ──► Use less coding. Zero over-engineered    │
+│                                     abstraction bloat. Complete yet minimal.│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **Tech Stack & Notification Grounding:**
+   - Always honor the exact notification tools (Capacitor LocalNotifications, Push, FCM, Web Notifications) and libraries requested by the user or present in the repo.
+   - Zero hallucination of APIs or library swapping.
+2. **The Clarification Gate (Mandatory Confirmation Over Speculation):**
+   - If requirements, schedules, or architectural directions are unclear or ambiguous: **DO NOT guess or make auto-decisions**.
+   - Directly ask the user for confirmation via interactive prompt (`ask_question`) before writing code.
+3. **Lean Code Minimalism ("Use Less Coding — Don't Write Too Much Code"):**
+   - Deliver maximal functionality with minimal lines of clean, idiomatic code.
+   - Strictly ban unnecessary boilerplate, gratuitous wrappers, and over-engineered abstractions.
+   - Keep fixes surgical (under 20–30 lines) while preserving 100% production completeness (no placeholders).
+
+---
+
 ## 🚀 Quick Installation
 
 Drop **Zero-Guess Debugger** into any AI coding tool in 10 seconds:
@@ -399,6 +428,9 @@ cp rules/AGENTS.md /path/to/your/project/AGENTS.md
 | **Dual-Theme Support** | Often broken in Dark Mode | **100% verified in Light & Dark Mode** |
 | **Multi-Portal Sync** | Admin $\leftrightarrow$ Home desynced | **Full E2E Inter-Portal Sync Verified** |
 | **Cascading Regressions** | Frequent (unnoticed until runtime) | **Zero (guaranteed by Blast Radius check)** |
+| **Tech & Notification Stack** | Arbitrary library substitutions | **100% Fidelity to User Stack (Zero Hallucination)** |
+| **Ambiguity & Edge Cases** | Speculative auto-decisions & silent errors | **Clarification Gate (Direct User Confirmation)** |
+| **Code Volume & Architecture** | Over-engineered bloatware & boilerplate | **Lean Code Minimalism (Surgical & Anti-Bloat)** |
 
 ---
 

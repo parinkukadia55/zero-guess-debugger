@@ -31,12 +31,15 @@
 
 ## 🔍 Autonomous Closed-Loop Verification Protocol
 Whenever executing any feature, bug fix, or repo scan:
-1. **Plan & Memorize:** Read this `MEMORY_BOARD.md` to load full spatial memory and past rectifications.
-2. **Task List & Code:** Execute sequential milestones delivering 100% complete production code.
-3. **4-Dimensional Audit:**
+1. **Plan & Memorize:** Read this `MEMORY_BOARD.md` to load full spatial memory, tech stack contracts, and past rectifications.
+2. **Tech & Notification Fidelity:** Strictly adhere to user-specified notification channels (Capacitor LocalNotifications, Push, FCM) and tech libraries. Zero hallucination or unrequested library swapping.
+3. **The Clarification Gate:** If requirements, notification schedules, or technical directions are ambiguous, pause and prompt the user for confirmation (`ask_question`). Never take speculative automatic decisions.
+4. **Task List & Lean Code:** Execute sequential milestones delivering 100% complete production code while keeping implementations lean, direct, and anti-bloat ("use less coding, don't write too much code").
+5. **4-Dimensional Audit:**
    - 🎨 **UI/UX:** Check loading/empty states, Light/Dark mode contrast, and responsive layout.
    - 🛣️ **Routes:** Confirm all paths, deep links, and modal triggers are registered without dead ends.
    - ⚙️ **API/Backend:** Validate payload contracts, status codes, and proper resource disposal.
    - 🛡️ **Security:** Confirm zero hardcoded secrets, escape inputs, enforce auth boundaries.
-4. **Rectify & Loop:** Log any flaw on this board, apply surgical fix, and re-audit until **100% verification certainty** is achieved.
-5. **Persist:** Commit updated `MEMORY_BOARD.md` to disk for cross-thread permanence.
+6. **Rectify & Loop:** Log any flaw on this board, apply surgical fix (under 20–30 lines), and re-audit until **100% verification certainty** is achieved.
+7. **Persist:** Commit updated `MEMORY_BOARD.md` to disk for cross-thread permanence.
+

@@ -10,9 +10,11 @@ Trial-and-error debugging, speculative guessing, hallucinating APIs, and quota-d
 ## Phase 1: Goal Planning & Wireframe Mapping (Before Any Code is Touched)
 1. **Define Concrete Goal:** Restate user request with unambiguous success criteria.
 2. **Wireframe & Route Mapping:** In your internal reasoning, map all views, routes, interactive buttons, form triggers, and endpoints.
-3. **What is Required:** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts.
-4. **How It Will Be Created:** Outline technical strategy, data flow, architecture, and multi-portal sync plan.
-5. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
+3. **What is Required (Tech & Notification Fidelity):** Detail all files to create/modify, packages, schemas, translation keys, visual assets, and API contracts. Strictly honor user-specified tech stack and notification tools (zero library swapping).
+4. **The Clarification Gate:** If requirements, notification schedules, or technical directions are ambiguous or confusing, stop and ask the user for confirmation (`ask_question`). Never take speculative automatic decisions.
+5. **How It Will Be Created (Lean Code Mandate):** Outline technical strategy, data flow, architecture, and multi-portal sync plan. Enforce lean code minimalism: direct, idiomatic implementations without over-engineered boilerplate ("use less coding, don't write too much code").
+6. **Living Task Checklist:** Break down the work into discrete, ordered tasks (`Task 1`, `Task 2`, `Task 3`...).
+
 
 ## Phase 2: Sequential Step-by-Step Execution & Live Tracking
 1. **One Task at a Time:** Execute tasks strictly sequentially. Never attempt all tasks at once.
@@ -74,3 +76,18 @@ At the end of every conversation or audit, output a clear Eyesight Report:
   3. `⚙️ API & Backend:` Schema validation, explicit HTTP status codes (`200`/`400`/`401`/`500`), resource teardown (listeners, streams).
   4. `🛡️ Security & Hardening:` Zero hardcoded secrets, input sanitization (XSS/injection defense), CORS/storage sandboxing.
 - **Loop to 100% Success:** Never stop at first-draft code. If flaws or vulnerabilities exist, log on `MEMORY_BOARD.md`, fix immediately, re-audit, and repeat until 100% operational certainty.
+
+---
+
+## Phase 9: Notification & Tech Stack Fidelity, The Clarification Gate & Lean Code Minimalism
+1. **Tech Stack & Notification Grounding:**
+   - Honor exact notification channels (Capacitor LocalNotifications, Push, FCM, Web Notifications) and libraries specified by user or repo.
+   - Zero hallucination or unrequested library swapping.
+2. **The Clarification Gate (Mandatory Confirmation Over Speculation):**
+   - If requirements, triggers, schedules, or architectural directions are unclear or ambiguous: **DO NOT guess or make auto-decisions**.
+   - Directly ask the user for confirmation via interactive prompt (`ask_question`) before writing code.
+3. **Lean Code Minimalism ("Use Less Coding — Don't Write Too Much Code"):**
+   - Maximum functional signal with minimal lines of clean, idiomatic code.
+   - Ban over-engineering, gratuitous wrappers, and redundant boilerplate.
+   - Keep bug fixes surgical (under 20–30 lines) while maintaining 100% production completeness (zero placeholders).
+

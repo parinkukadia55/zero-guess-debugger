@@ -8,18 +8,19 @@ description: >-
   native AI image/video generation models, zero-hallucination, mandatory pre-fix diagnostic cards,
   2-attempt circuit breakers, bidirectional reverse-checking, strict 3-tier verification gates with
   stale-build timestamp guards, persistent feature memory board (MEMORY_BOARD.md) with full-repo anti-misplacement scans,
-  end-of-run eyesight triage reports, and autonomous self-healing closed-loop audits (Plan -> Memorize -> Task -> Code -> Error & Security Audit -> Rectify -> 100% Outcome Loop across UI/UX, Routes, APIs, Backend, and Security).
+  end-of-run eyesight triage reports, autonomous self-healing closed-loop audits (Plan -> Memorize -> Task -> Code -> Error & Security Audit -> Rectify -> 100% Outcome Loop across UI/UX, Routes, APIs, Backend, and Security),
+  notification & tech stack fidelity, the clarification gate (mandatory confirmation over speculative guessing), and lean code minimalism (anti-bloat surgical implementation).
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/zero-guess-debugger
-  version: "1.8.0"
+  version: "1.9.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
 > **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, and an **Autonomous Self-Healing Closed-Loop Engine (100% Verification across UI/UX, Routes, APIs, Backend & Security)**.
+> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, **Autonomous Self-Healing Closed-Loop Engine (100% Verification across UI/UX, Routes, APIs, Backend & Security)**, **Notification & Tech Stack Fidelity**, **The Clarification Gate (No Autonomous Speculation)**, and **Lean Code Minimalism (Anti-Bloat Surgical Engineering)**.
 
 ---
 
@@ -47,14 +48,21 @@ In its internal reasoning, the agent must build a structural map of the affected
 - **Underlying Endpoints & Handlers:** What API endpoints or event handlers are connected to each button?
 
 ### 3. Prerequisite & Impact Analysis ("What is Required & How")
+- **Tech Stack & Notification Fidelity Check:**
+  - What exact tech stack, libraries, or notification mechanisms did the user specify in their prompt or establish in the repository (e.g. Capacitor LocalNotifications, FCM, Push, Web Notifications)?
+  - **Zero-Hallucination Mandate:** Integrate the user's exact chosen libraries. Never swap or substitute unrequested alternatives.
+- **The Clarification Gate Check (No Speculative Decisions):**
+  - Are any requirements, notification schedules, payload schemas, or technical paths ambiguous or confusing?
+  - **If confused or uncertain:** **STOP IMMEDIATELY.** Do NOT make speculative automatic assumptions. Ask the user directly via interactive questions (`ask_question`) before drafting or executing code.
 - **What is Required to Accomplish It:**
   - New files to create, existing files to modify, or files to delete.
   - Required packages, library imports, or API definitions.
   - Data contracts, schemas, or type models.
   - Translation keys across all supported locales (`en`, `hi`, `gu`, etc.).
   - Visual assets: Use generative AI image models (`generate_image`), never script-based fallbacks.
-- **How It Will Be Created:**
+- **How It Will Be Created (Lean Code Mandate):**
   - Concrete architectural strategy, component hierarchy, function logic, and data flow.
+  - **Lean Code Minimalism:** Plan the most direct, concise, and idiomatic implementation. Ban over-engineered abstraction bloat, redundant wrappers, and excessive boilerplate ("use less coding, don't write too much code").
   - Explicit platform boundary checks (Web, Android/Capacitor, iOS, Desktop).
   - Cross-portal data synchronization plan (Web $\leftrightarrow$ User Home $\leftrightarrow$ Admin Panel $\leftrightarrow$ Native Shell).
 
@@ -397,4 +405,42 @@ Every change must pass all 4 dimensions before completion:
 - **Injection & XSS Sanitization:** All user inputs escaped before DOM insertion or query execution (`textContent` over `innerHTML`, parameterized queries).
 - **CORS, Auth & Storage Hardening:** Token storage validation (secure cookie / sandboxed storage), origin verification, permission/role boundary enforcement.
 - **Safe Fallbacks:** Graceful degradation on network failure, preventing stack trace or sensitive error disclosure to client UI.
+
+---
+
+## 🎯 Phase 10: Notification & Tech Stack Fidelity, The Clarification Gate & Lean Code Minimalism
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│          PHASE 10: FIDELITY, CLARIFICATION GATE & LEAN CODE MANDATES         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. TECH & NOTIFICATION FIDELITY ──► User choices are absolute. Zero swapping│
+│ 2. CLARIFICATION GATE           ──► Confused / ambiguous? ASK USER before!   │
+│ 3. LEAN CODE MINIMALISM         ──► Use less coding. Zero over-engineered    │
+│                                     abstraction bloat. Complete yet minimal.│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 1. Notification & Tech Stack Fidelity (Zero Speculative Substitution)
+- **User Stack Is Absolute Law:** Strictly honor and ground in whatever notification mechanisms (e.g. Capacitor LocalNotifications, Push, FCM, Web Notifications, custom toast, WebSocket) and tech libraries/tools the user specifies in their prompt or has already implemented in the codebase.
+- **Strict Ban on Unsolicited Library Swapping:** Never swap a user's chosen notification library, state manager, routing solution, or UI framework for an alternative simply because it is familiar. If Capacitor LocalNotifications is in use, implement via Capacitor LocalNotifications.
+- **API & Manifest Grounding:** Confirm exact plugin signatures, manifest permissions (`POST_NOTIFICATIONS`, `SCHEDULE_EXACT_ALARM`), and channel configurations directly from code and official schemas before integrating.
+
+### 2. The Clarification Gate (Mandatory Confirmation Over Autonomous Speculation)
+- **Zero-Speculation Protocol:** If the agent encounters ambiguous requirements, conflicting instructions, unfamiliar tech stacks, uncertain notification triggers/intervals, or lacks sufficient context to make a definitive engineering choice:
+  - **DO NOT make speculative automatic assumptions.**
+  - **DO NOT silently guess user intent or pick an arbitrary architecture.**
+  - **MANDATORY:** Pause execution and directly ask the user for confirmation (using the `ask_question` tool or a clear interactive confirmation prompt) in between planning/coding before making irreversible or speculative assumptions.
+- **When to Invoke the Clarification Gate:**
+  1. **Ambiguous Notification Schedules:** e.g., user asks for "daily reminders" without specifying exact trigger time or notification payload.
+  2. **Tech Stack Ambiguities:** Multiple competing libraries or plugins installed with unclear target environment.
+  3. **Architectural Fork:** Multiple valid implementation paths where picking one locks the user into an unintended pattern.
+  4. **Destructive or Breaking Changes:** Deleting existing routes, changing core data models, or altering storage mechanisms.
+
+### 3. Lean Code Minimalism (Anti-Bloat & Surgical Implementation)
+- **"When Need Less Coding in Creation or Rectification, Use Less Coding — Don't Write Too Much Code":**
+  - **Maximum Functional Signal, Minimum Lines:** Solve issues at the root using the leanest, most idiomatic, and direct code possible.
+  - **Ban Over-Engineering & Gratuitous Abstractions:** Avoid sprawling utility files, complex factory patterns, redundant wrapper functions, and unnecessary boilerplate when a concise 10–20 line native implementation achieves 100% of the functionality.
+  - **Surgical Bug Rectifications:** Keep fixes surgical and focused (under 20–30 lines where possible). Never rewrite entire files or introduce massive wrapper layers to fix localized defects.
+  - **Completeness Without Bloat:** Lean coding does NOT mean placeholder omission. Code must remain 100% complete and production-ready (no `// ... rest of code unchanged` or `// TODO`), but free of superfluous fluff, redundant types, and excessive ceremonial scaffolding.
 
