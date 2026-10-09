@@ -1,446 +1,309 @@
 ---
 name: zero-guess-debugger
-description: >-
-  Stop AI coding agents from burning your quota with blind trial-and-error. Enforces cross-thread
-  context synthesis, architectural route & wireframe mapping, goal definition, prerequisite analysis,
-  living task checklists, sequential step-by-step execution with live completion updates, multi-language
-  (i18n) parity, multi-portal interconnectivity (Web + User Home + Admin Panel + Mobile/Native),
-  native AI image/video generation models, zero-hallucination, mandatory pre-fix diagnostic cards,
-  2-attempt circuit breakers, bidirectional reverse-checking, strict 3-tier verification gates with
-  stale-build timestamp guards, persistent feature memory board (MEMORY_BOARD.md) with full-repo anti-misplacement scans,
-  end-of-run eyesight triage reports, autonomous self-healing closed-loop audits (Plan -> Memorize -> Task -> Code -> Error & Security Audit -> Rectify -> 100% Outcome Loop across UI/UX, Routes, APIs, Backend, and Security),
-  notification & tech stack fidelity, the clarification gate (mandatory confirmation over speculative guessing), and lean code minimalism (anti-bloat surgical implementation).
+description: Investigate software defects using reproducible symptoms, explicit hypotheses, bounded experiments, and scoped verification. Use for debugging failures and regressions; broad audits and unrelated feature work do not require this workflow.
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/zero-guess-debugger
-  version: "1.9.0"
+  version: "2.0.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
-> **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, **Autonomous Self-Healing Closed-Loop Engine (100% Verification across UI/UX, Routes, APIs, Backend & Security)**, **Notification & Tech Stack Fidelity**, **The Clarification Gate (No Autonomous Speculation)**, and **Lean Code Minimalism (Anti-Bloat Surgical Engineering)**.
+> **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**
+>
+> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media**, **Zero-Guess Debugging**, **Stale-Build Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, **End-of-Run Broken Item Eyesight Triage**, **Autonomous Self-Healing Closed-Loop Audits**, **Notification & Tech Stack Fidelity**, **The Clarification Gate**, and **Lean Code Minimalism**.
+
+Reduce blind retries by making the evidence behind each debugging decision explicit.
+These instructions guide an assistant; they do not enforce execution or guarantee correctness.
+
+## Scope and investigate
+
+1. Establish the observed failure and the behavior that would count as fixed. Use accessible conversation context and relevant project instructions; do not claim access to other chats or missing history.
+2. Inspect the failing path, actual symbols, and relevant callers before changing behavior. Preserve the user's stack and unrelated work. Use the project's existing check commands rather than assuming a language or framework.
+3. Reproduce the symptom when feasible. If reproduction is unavailable, record that limitation and distinguish source inspection from runtime evidence.
+4. Separate observation from hypothesis. Choose the smallest useful experiment, state its predicted result, and use the result to confirm or reject the hypothesis. Temporary instrumentation is legitimate; remove it when no longer needed.
+
+For a simple defect, a short explanation is enough. For uncertain or repeated failures, use the [diagnostic example](examples/DIAGNOSTIC_CARD_EXAMPLE.md). Do not invent an exact root cause to fill a template.
+
+## Fix and verify proportionally
+
+- Prefer the smallest coherent fix. There is no line-count cap; correctness and maintainability take priority over brevity.
+- A local fix needs focused verification. A shared-contract change also needs consumer and regression checks. Authentication, persistence, and other consequential changes need checks of relevant failure paths.
+- Use existing tests where useful. Add a regression test when it captures the failure and provides lasting protection; do not add tests that only restate the implementation.
+- Run relevant static, contract, and runtime checks when applicable and available. Record unavailable or inapplicable checks explicitly; passing one layer does not prove the others.
+- Before interpreting a runtime result, establish which source/configuration and build are actually running. See [build identity](references/build-identity.md) when compiled, installed, cached, or remote artifacts are involved.
+- Ask about unresolved choices that materially affect requirements, data, compatibility, or irreversible actions. Resolve routine reversible implementation choices from evidence and state meaningful assumptions.
+
+## Bound retries and scope
+
+- Do not repeat a failed change without new evidence. After two failed fixes for the same hypothesis, stop patching it and revisit the reproduction, assumptions, and data flow.
+- Default investigation budget: three distinct hypotheses or five failed fix attempts in total, whichever comes first. Use a user-specified budget instead when provided. Count attempts across reassessments; renaming a hypothesis does not reset the budget.
+- At the budget limit, stop speculative edits and report the evidence, remaining blocker, and next discriminating experiment. Resume dependent work when new evidence, access, or an explicitly revised budget makes progress possible.
+- Missing access, an unavailable required environment, or an external failure is a reason to report a limitation, not to repeatedly rewrite working code. Continue independent authorized work when possible.
+- Fix defects within the task's scope. Report unrelated findings separately; do not turn a focused change into an unlimited repair campaign.
+
+## Supporting references
+
+The main phase guidance and examples are included below so this skill remains useful on its own. These references provide additional detail when relevant:
+
+- [UI, localization, and connected surfaces](references/ui-and-contracts.md): changed interfaces, translations, shared state, or mobile boundaries.
+- [Security-sensitive changes](references/security.md): authentication, authorization, secrets, untrusted inputs, or persistent data changes.
+- [Media selection](references/media.md): the task includes generating or modifying visual assets.
+- [Evidence memory](examples/MEMORY_BOARD_TEMPLATE.md): ongoing investigations, handoffs, or a user-requested feature audit. Update an existing project record when suitable; a one-line fix does not require a new ledger.
+
+## Finish with evidence
+
+Report what changed, which checks ran and their outcomes, and remaining uncertainty. Use these states for each relevant claim:
+
+| State | Meaning |
+| --- | --- |
+| Verified | Named checks passed for a stated scope and revision/environment. |
+| Failed | A named check reproduced a defect or regression. |
+| Not tested | A relevant check was not run; explain why. |
+| Unknown | Evidence is insufficient to judge the behavior. |
+| Stale | Evidence predates a relevant code, configuration, or environment change. |
+| Not applicable | The check does not apply to the affected behavior. |
+
+Claim the defect is fixed only when the scoped acceptance checks support that conclusion. Otherwise report it as blocked or partially verified, with the remaining limitation. Never equate inspected code, a saved memory entry, or a passing test suite with universal operational or security certainty.
 
 ---
 
 ## 🧵 Phase 0: Cross-Thread Context Synthesis (The Unified Chat Rule)
 
-Before generating any plan or touching code, the agent MUST synthesize the entire conversation history:
-1. **Combine All Thread Decisions:** Gather all requirements, architectural constraints, design decisions, and preferences stated across previous user messages and turns.
-2. **Never Drop Historical Context:** Never omit previously agreed features (e.g. dual-theme support, multi-language parity, mobile responsiveness, offline fallbacks, or role permissions) when working on new tasks.
-3. **Explicit Assumption Check:** If the user request relates to a previously discussed module or portal, trace the dependency chain before proceeding.
+Combine available requirements, architectural decisions, and user preferences before planning. Preserve established requirements such as responsiveness, supported locales, themes, offline behavior, and role permissions when they affect the change. Use accessible conversation history and saved project records; identify missing context instead of claiming to have read inaccessible chats.
 
----
+**Example:** A previous decision says the application supports English, Hindi, and Gujarati. A change to a shared validation message should account for those existing locales. It does not authorize adding translation infrastructure to a different, single-language project.
 
-## 🧭 Phase 1: Goal Planning, Wireframe & Route Mapping (Before Any Code is Touched)
+## 🧭 Phase 1: Goal Planning, Wireframe & Route Mapping
 
-Whenever the user provides a request, feature requirement, or problem statement, the agent MUST first formulate a structured **Execution Plan**:
+For work spanning several components, define the goal and acceptance criteria, map affected views and triggers, identify required contracts/files, and outline the data flow. A small local fix needs only the relevant subset.
 
-### 1. Define the Concrete Goal
-- **User Request Summary:** Restate what the user is asking for in precise, unambiguous technical terms.
-- **Success Criteria:** What exact condition defines that this task is 100% complete and working?
-
-### 2. Architectural Wireframe & Route Mapping
-In its internal reasoning, the agent must build a structural map of the affected views and navigation:
-- **Routes & Views Mapped:** What routes, pages, tabs, or modals are involved?
-- **Interactive Buttons & Triggers:** What buttons, forms, or actions live on each view?
-- **Underlying Endpoints & Handlers:** What API endpoints or event handlers are connected to each button?
-
-### 3. Prerequisite & Impact Analysis ("What is Required & How")
-- **Tech Stack & Notification Fidelity Check:**
-  - What exact tech stack, libraries, or notification mechanisms did the user specify in their prompt or establish in the repository (e.g. Capacitor LocalNotifications, FCM, Push, Web Notifications)?
-  - **Zero-Hallucination Mandate:** Integrate the user's exact chosen libraries. Never swap or substitute unrequested alternatives.
-- **The Clarification Gate Check (No Speculative Decisions):**
-  - Are any requirements, notification schedules, payload schemas, or technical paths ambiguous or confusing?
-  - **If confused or uncertain:** **STOP IMMEDIATELY.** Do NOT make speculative automatic assumptions. Ask the user directly via interactive questions (`ask_question`) before drafting or executing code.
-- **What is Required to Accomplish It:**
-  - New files to create, existing files to modify, or files to delete.
-  - Required packages, library imports, or API definitions.
-  - Data contracts, schemas, or type models.
-  - Translation keys across all supported locales (`en`, `hi`, `gu`, etc.).
-  - Visual assets: Use generative AI image models (`generate_image`), never script-based fallbacks.
-- **How It Will Be Created (Lean Code Mandate):**
-  - Concrete architectural strategy, component hierarchy, function logic, and data flow.
-  - **Lean Code Minimalism:** Plan the most direct, concise, and idiomatic implementation. Ban over-engineered abstraction bloat, redundant wrappers, and excessive boilerplate ("use less coding, don't write too much code").
-  - Explicit platform boundary checks (Web, Android/Capacitor, iOS, Desktop).
-  - Cross-portal data synchronization plan (Web $\leftrightarrow$ User Home $\leftrightarrow$ Admin Panel $\leftrightarrow$ Native Shell).
-
-### 4. The Living Task Checklist
-Break down the implementation into atomic, sequential milestones:
-```markdown
-### 📋 Task Checklist
-- [ ] Task 1: [Short Actionable Title] — Description of deliverables
-- [ ] Task 2: [Short Actionable Title] — Description of deliverables
-- [ ] Task 3: Multi-Language (i18n) Parity Audit (All locales updated, zero hardcoded text)
-- [ ] Task 4: Multi-Portal Interconnectivity Audit (Web <-> User Home <-> Admin Panel)
-- [ ] Task 5: 3-Tier Verification Gate (Static -> Contract -> Live with Stale-Build Guard)
-- [ ] Task 6: Broken Button, Route & Endpoint Eyesight Report
+```text
+Available context + user request
+  -> Concrete goal and acceptance criteria
+  -> Affected routes, buttons, modals, handlers, and endpoints
+  -> Required files, contracts, assets, and supported locales
+  -> Implementation and verification checklist
+  -> Scoped result and remaining gaps
 ```
 
----
+**Example goal:** Restore the Admin Muhurat toggle so the saved setting appears in the User Home view under the product's intended synchronization behavior. Acceptance checks cover persistence, user-view refresh, and an unauthorized update attempt.
+
+```markdown
+### 📋 Task Checklist — illustrative multi-portal task
+- [ ] Task 1: Inspect the settings schema, admin handler, and consumer contract.
+- [ ] Task 2: Reproduce the missing update and test the leading hypothesis.
+- [ ] Task 3: Correct the shared state/update path.
+- [ ] Task 4: Update affected en, hi, and gu messages if labels changed.
+- [ ] Task 5: Run applicable static, contract, and live checks.
+- [ ] Task 6: Report verified behavior, failures, and untested surfaces.
+```
 
 ## ⚡ Phase 2: Sequential Step-by-Step Execution & Live Progress Tracking
 
-Execute the task checklist **strictly one-by-one**:
+Execute dependent changes in order and keep the active task clear. Independent inspections may run together when supported. Report meaningful milestones and blockers; avoid repeating a full checklist after every minor action. A new failure triggers evidence gathering before further patches.
 
-1. **One Task at a Time:** Never attempt to do everything in one massive, chaotic blast. Focus entirely on the active task.
-2. **Live Completion Status Updates:** As soon as a task is completed, report the updated checklist to the user with a concise summary of what was accomplished:
-   ```markdown
-   ### 📋 Execution Progress
-   - [x] **Task 1: Define TypeScript schemas and contracts** — *Completed (Added `types/astrology.ts`)*
-   - [>] **Task 2: Implement computation logic** — *IN PROGRESS*
-   - [ ] Task 3: Multi-Language Parity (en, hi, gu) — *Pending*
-   - [ ] Task 4: Connect Admin Panel to Home Panel & Endpoints — *Pending*
-   - [ ] Task 5: Run 3-Tier Verification Gate (with Stale-Build Guard) — *Pending*
-   - [ ] Task 6: Eyesight Triage Audit — *Pending*
-   ```
-3. **If an Error Occurs During a Task:** Pause immediately and invoke the **Zero-Guess Debugging Protocol** (Phase 6) to solve the root cause before moving forward.
+The following statuses are fictional examples, not results from the current repository:
 
----
+```markdown
+### 📋 Execution Progress
+- [x] Task 1: Inspect TypeScript schemas and contracts — caller map recorded.
+- [>] Task 2: Trace computation and shared state — hypothesis under test.
+- [ ] Task 3: Check affected en, hi, and gu dictionaries.
+- [ ] Task 4: Verify Admin Panel to Home Panel synchronization.
+- [ ] Task 5: Verify the running build and execute relevant checks.
+- [ ] Task 6: Produce the Eyesight report with evidence and gaps.
+```
 
-## 🎨 Phase 3: Media & Asset Generation (Native Generative Model Mandate)
+## 🎨 Phase 3: Media & Asset Generation (Native Generative Models)
 
-When the user requests to generate an image, video, banner, mockup, icon, or visual asset:
+When the task requests generated raster artwork, a banner, texture, or image transformation, use an available dedicated image capability with the actual supported parameters. Specify composition and aspect ratio where supported. Do not silently substitute crude scripted drawings for requested generative artwork.
 
-- **MANDATORY: Dedicated Generative AI Model:**
-  - Always invoke the native image generation tool / model (`generate_image`).
-  - Provide a rich, art-directed prompt, descriptive `ImageName`, and appropriate `AspectRatio` (`1:1`, `16:9`, `9:16`, `4:3`, `3:2`).
-- **STRICTLY PROHIBITED: No Python Scripts for Visuals:**
-  - Never write or execute Python scripts (e.g. using `PIL`/`Pillow`, `matplotlib`, `opencv`, `moviepy`, `pygame`, or canvas rendering scripts) to programmatically draw, generate, or simulate images or videos.
-  - *Exception:* Script-based plotting is permitted *only* when the user explicitly requests mathematical data charts or statistical plots.
-
----
+**Example:** For a requested 16:9 product banner, provide an art-directed prompt and the supported size/aspect option. For an existing SVG icon, edit the vector asset; for an accurate data chart, use plotting tools. Video requires an available video capability. Do not invent a `generate_image` tool or assume an image tool produces video.
 
 ## 🌍 Phase 4: Multi-Language (i18n) Parity Shield
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       MULTI-LANGUAGE (i18n) AUDIT                           │
-├──────────────────────────────┬──────────────────────────────────────────────┤
-│ 1. Zero Hardcoded Strings    │ All UI text wrapped in t('key') / dict lookup│
-│ 2. All-Locales Parity        │ Every new key added to en, hi, gu, etc.      │
-│ 3. Layout Resilience         │ UI handles 30% text expansion without breaks │
-│ 4. Cross-Portal Sync         │ Language switch syncs modals, PDFs, and views│
-└──────────────────────────────┴──────────────────────────────────────────────┘
-```
+Apply to products that already support localization and to affected text/layouts.
 
-1. **Zero Hardcoded Strings:** Every button label, header, input placeholder, validation toast, and tooltip must use the translation key system.
-2. **All-Locales Parity:** When a translation key is added or modified, update **ALL supported language dictionaries** in the same change.
-3. **Text Expansion Resilience:** Indic scripts (Hindi, Gujarati) require 20%–35% more space than English. Layouts must gracefully prevent text truncation or broken line wraps.
-4. **Deep Artifact Sync:** Ensure language preference dynamically propagates to generated PDFs, printed charts, shared URLs, and local storage (`jyotish_lang_chosen`).
+| Check | What to establish |
+| --- | --- |
+| User-facing strings | Labels, placeholders, validation, and tooltips use the existing translation mechanism. |
+| Supported locales | New or changed keys are accounted for in each supported dictionary. |
+| Layout resilience | Representative long strings and scripts remain readable in affected views. |
+| Connected artifacts | Relevant modals, PDFs, and shared views honor the established locale behavior. |
 
----
+**Example:** If the Save button uses `t('settings.save')`, verify the corresponding key in `en`, `hi`, and `gu` when those locales are supported. Exercise translated text in the actual layout; a fixed 30% expansion allowance alone does not prove it fits. Reuse the project's locale storage contract rather than imposing an example key such as `jyotish_lang_chosen`.
 
-## 🌐 Phase 5: Multi-Portal Ecosystem Interconnectivity (Web + Home + Admin + Mobile)
+## 🌐 Phase 5: Multi-Portal Ecosystem Interconnectivity
 
-```
-┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                           MULTI-PORTAL INTERCONNECTIVITY MATRIX                                │
-├──────────────────────────────┬─────────────────────────────────────────────────────────────────┤
-│ 1. Public Web Portal         │ Landing pages, marketing, SEO, guest calculation forms          │
-│ 2. User / Home Portal        │ Dashboard, user charts, history, saved dossiers, personal state │
-│ 3. Admin Panel               │ Master configs, translation overrides, feature toggles, analytics│
-│ 4. Mobile Shell (Capacitor)  │ Native camera bridges, hardware sensors, offline storage cache  │
-└──────────────────────────────┴─────────────────────────────────────────────────────────────────┘
+Trace the producer, transport/storage, and consumers for the changed behavior. Verify existing themes and platform boundaries where affected.
+
+| Surface | Example responsibilities |
+| --- | --- |
+| Public Web Portal | Landing pages, guest forms, public results. |
+| User / Home Portal | Dashboard, saved charts, history, personal state. |
+| Admin Panel | Configuration, translation overrides, feature toggles. |
+| Mobile Shell | Native bridges, permissions, device resources, offline cache. |
+
+```text
+Admin toggle -> validated API -> persisted setting/shared store
+            -> consumer refresh/invalidation -> User Home / Web / Mobile
 ```
 
-1. **Trace What Connects and Where:**
-   * **Producer Portal:** Where is the data configured? (e.g. Admin Panel toggle, User form input).
-   * **Transport & Storage:** Which API endpoint validates, persists, and broadcasts the change?
-   * **Consumer Portals:** How do the Public Web, User Home, and Mobile Shell invalidate cache and reflect the update?
-2. **Single Source of Truth:** Changes saved in the **Admin Panel** must propagate through the shared API/store and immediately reflect in the **User / Home Panel** without manual database intervention.
-3. **Dual-Theme UI Component Audit:** Every component across all portals must be styled for **both Light Mode AND Dark Mode** (no color collisions, zero unstyled backgrounds).
-
----
+**Example:** An Admin Panel change saves correctly but the Home Panel remains stale. Inspect the consumer subscription or refresh path and intended consistency model before adding a timeout. Do not assume all products need immediate updates or all four surfaces.
 
 ## 🔒 Phase 6: The Zero-Guess Debugging Protocol
 
-When encountering any error, bug, test failure, or unexpected behavior during execution or live testing:
+Keep the diagnostic card, caller audit, two-attempt reassessment, reverse check, and three verification layers. Distinguish a working hypothesis from a proven cause. The overall retry budget defined above also applies.
 
-```
-                      ┌────────────────────────────────────────┐
-                      │ 1. Zero-Hallucination & Identification │
-                      │ (Symptom, file location, exact lines)  │
-                      └──────────────────┬─────────────────────┘
-                                         │
-                                         ▼
-                      ┌────────────────────────────────────────┐
-                      │ 2. Pre-Fix Diagnostic Card             │
-                      │ (Proof, root cause & caller audit)     │
-                      └──────────────────┬─────────────────────┘
-                                         │
-                                         ▼
-                      ┌────────────────────────────────────────┐
-                      │ 3. Surgical Fix (Max 2 Attempts)       │
-                      │ (Compact, under 30 lines, root-focused)│
-                      └──────────────────┬─────────────────────┘
-                                         │
-                                         ▼
-                      ┌────────────────────────────────────────┐
-                      │ 4. If 2 Attempts Fail -> REVERSE CHECK │
-                      │ (Bidirectional trace failure -> origin)│
-                      └──────────────────┬─────────────────────┘
-                                         │
-                                         ▼
-                      ┌────────────────────────────────────────┐
-                      │ 5. Strict 3-Tier Verification Gate     │
-                      │ Gate 1: Static (tsc --noEmit)          │
-                      │ Gate 2: Contract & Interconnect Checks │
-                      │ Gate 3: Verified Live Testing          │
-                      │         (with Stale-Build Guard)       │
-                      └────────────────────────────────────────┘
+```text
+Observed symptom + verified location
+  -> Diagnostic card: evidence, hypothesis, predicted experiment
+  -> Small discriminating experiment
+  -> Confirm or reject the explanation
+  -> Coherent fix and caller checks
+  -> Static / contract / runtime verification as applicable
 ```
 
-### The 9 Core Safeguards
+### 🔍 Pre-fix diagnostic card — illustrative example
 
-1. **Zero-Hallucination Mandate:** Never assume API signatures, props, or file paths without verifying source code.
-2. **Mandatory Pre-Fix Diagnostic Card:**
-   ```markdown
-   ### 🔍 Diagnostic Card
-   - [SYMPTOM]     : Verbatim error message or observable defect.
-   - [LOCATION]    : Exact file path, function, and verified line numbers.
-   - [ROOT CAUSE]  : Mechanical failure explanation.
-   - [SURGICAL FIX]: Concrete change addressing the origin.
-   - [BLAST RADIUS]: All callers, routes, endpoints, locales, and portals audited via grep_search.
-   ```
-3. **Blast Radius & Regression Shield:** Audit all consumers before altering shared functions.
-4. **The 2-Attempt Circuit Breaker:** Maximum 2 attempts per solution hypothesis. If Attempt 2 fails, **HALT** and trigger a Reverse Check.
-5. **Bidirectional Reverse-Check:** Trace forward: `Admin Panel -> Endpoint -> Store -> Router -> Home UI (Light/Dark, all Locales)`; trace backward from error stack to data origin.
-6. **Strict 3-Tier Verification Gate:** Gate 1 (Static: `tsc --noEmit`) $\rightarrow$ Gate 2 (Contract, i18n & Interconnect checks) $\rightarrow$ Gate 3 (Live device/browser testing with Stale-Build Guard).
-7. **Platform Boundary Awareness:** Storage sandboxing (`localStorage` fallbacks), camera stream teardown (`track.stop()`), and native overrides for Android/Capacitor.
-8. **Patch Minimalism:** Surgical fixes (under 20–30 lines). No symptom-masking with empty catches or arbitrary timeouts.
-9. **Stale-Build Guard & Timestamp Verification:** Always verify debug/release app date and timestamp against source code edits before live testing. If the binary is older or missing, trigger a fresh rebuild before running any test.
-
-### ⏱️ The Stale-Build Guard & Timestamp Verification Protocol (Before ANY Live Testing)
-
-Never run automated or manual live tests (ARTEMIS, Playwright, Espresso, Android APK, or browser preview) against a stale build artifact:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                 STALE-BUILD GUARD & TIMESTAMP DECISION TREE                 │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 1. Check Target Artifact Timestamp  (e.g. app-debug.apk / dist/index.html)  │
-│ 2. Check Latest Source Timestamp    (e.g. src/**, public/**, config files)  │
-│                                                                             │
-│ [ Artifact Time < Source Time ] ──► STALE BUILD DETECTED!                   │
-│                                     • BANNED: Do NOT run tests              │
-│                                     • ACTION: Trigger clean rebuild & sync  │
-│                                     • VERIFY: Check new timestamp > source  │
-│                                     • DEPLOY: Install fresh binary to device│
-│                                     • ONLY THEN execute live testing        │
-│                                                                             │
-│ [ Artifact Time >= Source Time ] ─► BUILD FRESH & UP-TO-DATE!               │
-│                                     • Proceed safely to live verification   │
-└─────────────────────────────────────────────────────────────────────────────┘
+```text
+[SYMPTOM]    : Submit raises "app.submitKundliForm is not a function".
+[LOCATION]   : Form binding in index.html and the app object declaration;
+               record actual line numbers only after inspecting the file.
+[EVIDENCE]   : The inspected form calls submitKundliForm(event), while the
+               app object exposes computeKundli(). Runtime build identity
+               still needs confirmation.
+[HYPOTHESIS] : The form retained an old method name after a rename.
+[EXPERIMENT] : Confirm the served build, reproduce, inspect the runtime
+               object, and search both method names and their callers.
+[PREDICTION] : The expected runtime lacks the old method; the replacement
+               accepts the inputs needed by the form.
+[FIX]        : Update the binding, or retain a compatibility adapter when
+               the supported caller contract requires the old name.
+[BLAST RADIUS]: Inspect other callers, submit prevention, input validation,
+                and duplicate submission behavior.
 ```
 
-1. **Compare Timestamps Prior to Test Execution:**
-   - **Target Artifact:** Query `LastWriteTime` of the active debug or release app binary (`android/app/build/outputs/apk/debug/app-debug.apk`, `android/app/build/outputs/apk/release/app-release.apk`, `dist/index.html`, etc.).
-   - **Source Code Changes:** Query `LastWriteTime` of the latest modified source files (`src/`, `www/`, `android/`, etc.).
-2. **Prevent False-Failure Spirals:**
-   - Testing against an outdated APK or bundle causes agents to see bugs that were already fixed in code, leading to phantom regressions, false diagnostic cards, and quota exhaustion.
-3. **Mandatory Fresh Rebuild Action:**
-   - If the artifact is older than source changes or missing, immediately execute the build pipeline (`npm run build`, `npx cap sync`, `./gradlew assembleDebug` or `./gradlew assembleRelease`).
-   - Confirm the new binary's timestamp is strictly newer than the source changes.
-   - Deploy/reinstall the fresh binary to the connected device or emulator before running assertions.
+If inspection establishes that preserving the old handler is necessary and the replacement takes no arguments, this adapter is one possible fix:
 
----
+```javascript
+submitKundliForm: function(event) {
+  if (event) event.preventDefault();
+  return this.computeKundli();
+}
+```
+
+This is an example object method, not a universal patch. A caller search does not prove the absence of regressions.
+
+After two failed fixes for the same hypothesis, reverse-check the chain: trace forward from the producer to the consumer and backward from the failure to its inputs. Record cumulative attempts; changing hypothesis names does not reset the overall budget.
+
+| Verification layer | Example evidence |
+| --- | --- |
+| Static | The project's configured syntax/type/lint check; `tsc --noEmit` only where appropriate. |
+| Contract / integration | Caller compatibility, request/response shape, affected locale keys, state propagation. |
+| Runtime | Reproduced interaction on the identified browser/device/build, with observed results. |
+
+### ⏱️ Stale-Build Guard & Build Identity Verification
+
+Keep timestamps as an initial clue, then establish the actual running artifact:
+
+```text
+Identify source + dirty changes + relevant configuration
+  -> Identify built artifact and test target
+  -> Does the running artifact correspond to the intended inputs?
+       YES: run scoped checks and record the identity evidence.
+       NO:  rebuild/sync/install through the existing authorized workflow.
+       UNKNOWN: investigate identity or report runtime verification blocked.
+```
+
+**Example:** Compare the APK's `LastWriteTime` with changed sources to detect an obvious mismatch, but also verify which package/build is installed on the device. A newer APK sitting on disk does not establish that the device is running it. Commands such as `npm run build`, `npx cap sync`, and `./gradlew assembleDebug` are examples only; inspect the project's actual pipeline and authorization first.
 
 ## 👁️ Phase 7: End-of-Run Broken Item Eyesight Report
 
-At the end of any conversation, build session, or audit turn, the agent MUST summarize its architectural findings and give the user clear **"Eyesight"** into all operational vs broken elements:
+Give the user visibility into the inspected scope, actual results, and remaining gaps. Use verified line references only when available. The following is a fictional reporting example, not an audit of this repository:
 
 ```markdown
 ### 👁️ Broken Buttons, Routes & Endpoints Eyesight Report
-
-#### 🟢 Verified & Operational Elements:
-- [Route/View]: Path or View name -> Confirmed operational.
-- [Button/Trigger]: Action name -> Correctly calls handler/endpoint.
-
-#### 🔴 Broken / Dead / Unlinked Elements Found:
-- [Broken Button]: `<button onclick="app.missingHandler()">` in `index.html:4343` -> Handler is undefined.
-- [Unregistered Route]: `/settings/profile` in `Navbar.tsx:42` -> Not declared in router configuration.
-- [Dead Endpoint]: `POST /api/save-kundli` -> Route returns 404 / handler unmounted.
-- [Desynced Panel]: Admin toggle "Enable Muhurat" has no listener in User Home Panel.
-
-#### 🛠️ Immediate Remediation Roadmap:
-1. Priority 1: Add shim/implementation for missing button handlers.
-2. Priority 2: Register missing routes in router table.
-3. Priority 3: Mount dead endpoints in server controller.
+- Scope: Admin Muhurat setting and its Home Panel consumer.
+- Verified: Authorized update persisted; Home view reflected the saved value
+  in the tested local build. Attach the actual test/build evidence.
+- Failed: /settings/profile navigation returned 404 during the scoped check.
+  Record its inspected route/caller location and reproduction.
+- Not tested: Android device flow; no device was available.
+- Unknown: Gujarati PDF rendering; outside the executed checks.
+- Next step: Resolve the route failure if within scope; otherwise report it
+  separately. Test the device path when access becomes available.
 ```
 
-This guarantees that the user is never left wondering what remains broken behind the scenes.
+Other findings may include an undefined `app.missingHandler()`, an unmounted `POST /api/save-kundli`, or a disconnected Admin toggle. Establish each with evidence before listing it as broken. An endpoint without a UI trigger may intentionally serve another client or background job.
 
----
+## 🧠 Phase 8: Persistent Feature Memory Board & Rectification Ledger
 
-## 🧠 Phase 8: Persistent Feature Memory Board & Rectification Ledger (`MEMORY_BOARD.md`)
+For sustained work, handoffs, or requested full-repository audits, maintain an existing project record or `MEMORY_BOARD.md`. Preserve the feature registry and fix history, but treat the board as an evidence index that can become stale.
 
-To completely eliminate **AI Context Amnesia**—where agents scan a repository, forget previously implemented features across chat turns, misplace components, or re-implement duplicate/conflicting logic—the agent MUST maintain a persistent **Feature Memory Board**:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                 PERSISTENT FEATURE MEMORY BOARD LIFECYCLE                   │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 1. Read MEMORY_BOARD.md (Load complete mental model of all existing features│
-│ 2. Full-Repo Scan (Detect new features, verify known routes & handlers)    │
-│ 3. Reconciliation (Catch misplaced, disconnected, or desynced features)    │
-│ 4. Rectification & Problem Audit (Track defects, record fixes, log health) │
-│ 5. Persist MEMORY_BOARD.md (Write back to disk for cross-thread permanence)│
-└─────────────────────────────────────────────────────────────────────────────┘
+```text
+Read relevant memory -> inspect requested scope -> reconcile code and record
+  -> note findings, evidence, and gaps -> persist updated investigation state
 ```
 
-### 1. The Standard Memory Board Schema (`MEMORY_BOARD.md`)
-The file lives in the repository root (`./MEMORY_BOARD.md`) and acts as the project's permanent feature knowledge base:
+### Feature registry example (fictional)
 
-```markdown
-# 🧠 Project Feature Memory Board & Rectification Ledger
+| ID | Feature / surface | Route / logic | State | Evidence / environment | Problem / next step |
+| --- | --- | --- | --- | --- | --- |
+| FEAT-001 | Lagna Kundli Calculator / Web | /kundli; engine/chart.ts::computeLagna | Verified for tested inputs | Named calculation tests at a recorded revision | Other inputs remain outside those checks. |
+| FEAT-002 | Admin Muhurat Manager / Admin + Home | /admin/muhurat; api/admin.ts::toggleMuhurat | Failed | Recorded reproduction: save succeeds, Home stays stale | Trace the consumer refresh path. |
+| FEAT-003 | PDF Dossier Export / User | /export/pdf; services/pdf.ts::buildPdf | Not tested | Gujarati font rendering has not been exercised | Generate and inspect an authorized test PDF. |
 
-> **Single Source of Truth for Codebase Features, Routes, Status & Rectifications**
-> Last Scanned / Synced: YYYY-MM-DD HH:MM | Total Features: N | Operational: X | In Rectification: Y
+During a requested full-repo scan, reconcile routes, handlers, services, and known consumers; identify missing or disconnected features without assuming every endpoint needs a UI. Track stable feature IDs where useful. Record the actual revision, dirty changes, environment, timestamp, check results, and rectification history. Mark affected evidence stale after relevant changes; default to unknown where evidence is missing. Never copy the example rows as actual project findings.
 
-## 🗺️ Feature Registry Matrix
+Before creating a potentially duplicate feature, consult the relevant record and confirm against code. Small fixes do not require initializing a full feature board.
 
-| ID | Feature Name | Domain / Portal | Route / View File | Backing Logic / Endpoints | Health Status | Known Problems / Notes | Rectification History |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `FEAT-001` | Lagna Kundli Calculator | Web / User | `/kundli`, `KundliView.tsx` | `engine/chart.ts::computeLagna` | 🟢 Operational | None | Fixed timezone offset in v1.2 |
-| `FEAT-002` | Admin Muhurat Manager | Admin | `/admin/muhurat` | `api/admin.ts::toggleMuhurat` | 🟡 Degraded | Toggle desynced from Home Panel | In Rectification: adding store listener |
-| `FEAT-003` | PDF Dossier Export | User Dashboard | `/export/pdf` | `services/pdf.ts::buildPdf` | 🔴 Broken | Missing Gujarati font rendering | Issue logged; pending font asset embed |
+## 🔄 Phase 9: Autonomous Self-Healing Closed-Loop & Full-Stack Security Audit
+
+Preserve the plan, code, inspect, rectify, and verify cycle within the user's task and the overall investigation budget. Complete the intended implementation without placeholder behavior, then execute the applicable acceptance checks.
+
+```text
+Plan and consult relevant memory -> ordered tasks -> implement
+  -> inspect affected dimensions -> record evidence
+  -> defect remains within scope and budget? Reassess and correct.
+  -> scoped acceptance checks pass? Report verified completion.
+  -> budget/access blocks verification? Report limitation and next experiment.
 ```
 
-### 2. Full-Repo Scan & Anti-Misplacement Protocol
-Whenever the user asks to **"scan full repo"**, **"scan all files"**, or **"audit features"**:
-1. **Load Memory Board:** Check for an existing `MEMORY_BOARD.md`. If missing, initialize one immediately.
-2. **Deep Architectural Traversal:** Walk all route configs, page components, button handlers, API controllers, and state stores.
-3. **Reconcile Against Memory Board:**
-   - **Discover New Features:** Register newly created views/features with a unique ID (`FEAT-XXX`).
-   - **Detect Misplaced Features:** Flag features that exist in code but disappeared from navigation menus, routes, or dashboards.
-   - **Detect Orphaned Endpoints:** Flag APIs or backend functions that have no UI trigger.
-4. **Health State Classification:**
-   - `🟢 Operational`: Fully wired, route works, handler operational, Light/Dark mode styled, i18n keys present.
-   - `🟡 Degraded`: Functional but has minor flaws (e.g. missing translation key, UI styling glitch in dark mode).
-   - `🔴 Broken`: Button throws error, route 404s, or backend endpoint missing.
-   - `🔵 In Progress`: Actively being created or refactored.
-5. **Rectification Tracking:**
-   - Log any diagnosed problem in the `Known Problems / Notes` column.
-   - When a bug fix or surgical change is applied, append a concrete note to `Rectification History` with the commit or file change summary.
-6. **Persist & Update:** Write the updated `MEMORY_BOARD.md` back to disk before finishing the turn.
+### Four-dimensional inspection matrix
 
-### 3. Pre-Action Cross-Check Mandate
-Before creating any new component, altering routes, or debugging:
-- **ALWAYS inspect `MEMORY_BOARD.md` first.**
-- Never blindly recreate an existing feature or overwrite an established route without verifying its registry on the board.
+| Dimension | Checks when affected |
+| --- | --- |
+| UI / UX | Loading/disabled/error/empty states; existing themes; keyboard access; supported viewport and translated text behavior. |
+| Routes / navigation | Registered affected routes, deep links, query preservation, auth redirects, and handler wiring. |
+| API / backend | Payload validation, meaningful status/error handling, persistence, optimistic state reconciliation, resource disposal. |
+| Security | Relevant server-side authorization and denied cases, secret handling, context-appropriate encoding, parameterized queries, and recovery. |
 
----
+**Example:** A camera-view fix may require stopping camera tracks on exit and checking denied permissions. It does not by itself require scanning every unrelated backend endpoint. A security check passing is evidence about that check, not a certification that the system is universally secure.
 
-## 🔄 Phase 9: Autonomous Self-Healing Closed-Loop & Full-Stack Security Engine (The 100% Outcome Loop)
+## 🎯 Phase 10: Notification & Tech Stack Fidelity, Clarification & Lean Code
 
-> **Mandatory Universal Execution Rule:** Applies across **any AI agent, CLI (`agy`, Claude Code, Cursor, Windsurf), API integration, automated runner, or script**. First Plan & Memorize, construct atomic task lists, code exhaustively, run 4-layer audits (including deep security vulnerability scans), record findings in `MEMORY_BOARD.md`, and **continuously loop until 100% operational and security certainty is achieved**.
+### Notification and tech stack fidelity
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│              AUTONOMOUS SELF-HEALING CLOSED LOOP (100% OUTCOME GATE)        │
-├─────────────────────────────────────────────────────────────────────────────┤
-│  1. PLAN & MEMORIZE     ──► Read & sync MEMORY_BOARD.md, historical context │
-│            │                                                                │
-│            ▼                                                                │
-│  2. ATOMIC TASK LIST    ──► Ordered task checklist, explicit deliverables   │
-│            │                                                                │
-│            ▼                                                                │
-│  3. EXHAUSTIVE CODING   ──► 100% complete production code (zero truncation) │
-│            │                                                                │
-│            ▼                                                                │
-│  4. 4-DIMENSIONAL AUDIT ──► UI/UX + Routes/APIs + Backend + Security Scans  │
-│            │                                                                │
-│            ▼                                                                │
-│  5. RECTIFY IN MEMORY   ──► Log defects/security findings on MEMORY_BOARD   │
-│            │                                                                │
-│      Errors/Flaws Found?                                                    │
-│       YES ───────────────► Re-enter Stage 3 (Surgical Fix & Code)           │
-│       NO  (100% Pass)   ──► Verification Gate Passed ──► COMPLETE           │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
+Honor the user's established libraries and mechanisms, including Capacitor LocalNotifications, FCM, Web Notifications, or a custom notification service when present. Inspect actual signatures, permissions, and channel configuration; do not swap libraries merely because another is familiar.
 
-### The 6-Stage Autonomous Loop Cycle:
+**Example:** If the project already uses Capacitor LocalNotifications, implement its requested reminder through that existing integration. Verify applicable permissions such as `POST_NOTIFICATIONS` against the actual target/API configuration instead of blindly adding manifest entries.
 
-1. **Stage 1: Plan & Memorize:**
-   - Consult `MEMORY_BOARD.md` to load the current system state, registered features, routes, and past incident rectifications.
-   - Absorb all cross-thread constraints so no established behavior is dropped.
-2. **Stage 2: Atomic Task Checklist:**
-   - Deconstruct user intent into sequential, ordered tasks (`Task 1`, `Task 2`, ...).
-3. **Stage 3: Exhaustive Production Coding:**
-   - Author 100% complete, fully articulated code. No placeholders, no `// TODO` stubs, no omissions.
-4. **Stage 4: 4-Dimensional Full-Stack & Security Audit:**
-   - Concurrently audit all 4 critical software dimensions (UI/UX, Routes/APIs, Backend/State, Security).
-5. **Stage 5: Memory Board Task Rectification:**
-   - Update `MEMORY_BOARD.md`: Log all newly identified bugs, edge cases, and security vulnerabilities under `Known Problems / Notes` and update their health states.
-6. **Stage 6: The 100% Closed Loop Gate:**
-   - If ANY test fails, lint errors arise, routes 404, dark/light themes collide, or security flaws are discovered:
-     - **DO NOT STOP.** Re-enter Stage 3, apply surgical fixes, re-audit, and update the rectification log.
-     - **Continue the loop until every layer achieves a 100% operational score.**
+### The clarification gate
 
----
+Ask when missing information materially changes behavior or commits the user to a consequential choice. Check accessible requirements first and continue independent authorized work while an answer is pending.
 
-### The 4-Dimensional Full-Stack & Security Inspection Matrix
+- **Notification schedule:** A request for daily reminders lacks a time/timezone and there is no established default. Clarify the schedule before scheduling notifications.
+- **Competing implementations:** Two installed libraries serve different platforms. Inspect their current usage; ask only if the intended target remains unresolved.
+- **Architectural fork:** A choice changes a public contract or persistence model. Make the consequence concrete before seeking a decision.
+- **Destructive change:** Establish authorization before deleting routes/data or applying an irreversible migration.
 
-Every change must pass all 4 dimensions before completion:
+Routine reversible implementation details can be resolved from evidence without a confirmation round.
 
-#### 1. 🎨 UI / UX Experience & Interactive Logic
-- **Interactive States:** Loading skeletons/spinners, disabled button states during async calls, error toast feedback, and empty data states.
-- **Dual-Theme Contrast Parity:** Explicit styling for **both** Light Mode and Dark Mode. Verify text legibility, card backgrounds, and border colors in both modes.
-- **Viewport & Touch Layout:** Safe areas (notch, dynamic island, status bar), Android keyboard resize behavior, mobile tap targets ($\ge 44 \times 44\text{px}$), and text expansion tolerance ($+30\%$ Indic/multilingual buffer).
+### Lean code minimalism
 
-#### 2. 🛣️ Routes, Navigation & Deep-Link Integrity
-- **Route Table Verification:** All route paths (`/path`), deep links (`#view-*`, parameters), and modal triggers explicitly registered in the router table.
-- **Navigation & Guard Logic:** Auth protection, unauthenticated redirects, history back-button behavior, and query string state preservation.
-- **Broken Element Prohibition:** Zero dead links, zero unhandled `onclick` stubs, zero unmounted view templates.
+> **When Need Less Coding in Creation or Rectification, Use Less Coding — Don't Write Too Much Code.**
 
-#### 3. ⚙️ API Contracts, Backend & State Hygiene
-- **Schema & Payload Contracts:** Parameter typing, request validation, response parsing, and explicit status code handling (`200 OK`, `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `500 Server Error`).
-- **State Synchronization:** Optimistic updates vs server state reconciliation, cache invalidation, and race condition prevention.
-- **Resource & Lifecycle Safety:** Unsubscribe event listeners, close SSE/WebSocket streams, stop camera tracks (`track.stop()`), clear timers/intervals, and provide graceful offline fallback (`localStorage`).
-
-#### 4. 🛡️ Security Vulnerability & Hardening Defense
-- **Zero Hardcoded Secrets:** No API keys, database passwords, private tokens, or JWT secrets exposed in client-side code, git tracking, or public bundles.
-- **Injection & XSS Sanitization:** All user inputs escaped before DOM insertion or query execution (`textContent` over `innerHTML`, parameterized queries).
-- **CORS, Auth & Storage Hardening:** Token storage validation (secure cookie / sandboxed storage), origin verification, permission/role boundary enforcement.
-- **Safe Fallbacks:** Graceful degradation on network failure, preventing stack trace or sensitive error disclosure to client UI.
-
----
-
-## 🎯 Phase 10: Notification & Tech Stack Fidelity, The Clarification Gate & Lean Code Minimalism
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│          PHASE 10: FIDELITY, CLARIFICATION GATE & LEAN CODE MANDATES         │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 1. TECH & NOTIFICATION FIDELITY ──► User choices are absolute. Zero swapping│
-│ 2. CLARIFICATION GATE           ──► Confused / ambiguous? ASK USER before!   │
-│ 3. LEAN CODE MINIMALISM         ──► Use less coding. Zero over-engineered    │
-│                                     abstraction bloat. Complete yet minimal.│
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-### 1. Notification & Tech Stack Fidelity (Zero Speculative Substitution)
-- **User Stack Is Absolute Law:** Strictly honor and ground in whatever notification mechanisms (e.g. Capacitor LocalNotifications, Push, FCM, Web Notifications, custom toast, WebSocket) and tech libraries/tools the user specifies in their prompt or has already implemented in the codebase.
-- **Strict Ban on Unsolicited Library Swapping:** Never swap a user's chosen notification library, state manager, routing solution, or UI framework for an alternative simply because it is familiar. If Capacitor LocalNotifications is in use, implement via Capacitor LocalNotifications.
-- **API & Manifest Grounding:** Confirm exact plugin signatures, manifest permissions (`POST_NOTIFICATIONS`, `SCHEDULE_EXACT_ALARM`), and channel configurations directly from code and official schemas before integrating.
-
-### 2. The Clarification Gate (Mandatory Confirmation Over Autonomous Speculation)
-- **Zero-Speculation Protocol:** If the agent encounters ambiguous requirements, conflicting instructions, unfamiliar tech stacks, uncertain notification triggers/intervals, or lacks sufficient context to make a definitive engineering choice:
-  - **DO NOT make speculative automatic assumptions.**
-  - **DO NOT silently guess user intent or pick an arbitrary architecture.**
-  - **MANDATORY:** Pause execution and directly ask the user for confirmation (using the `ask_question` tool or a clear interactive confirmation prompt) in between planning/coding before making irreversible or speculative assumptions.
-- **When to Invoke the Clarification Gate:**
-  1. **Ambiguous Notification Schedules:** e.g., user asks for "daily reminders" without specifying exact trigger time or notification payload.
-  2. **Tech Stack Ambiguities:** Multiple competing libraries or plugins installed with unclear target environment.
-  3. **Architectural Fork:** Multiple valid implementation paths where picking one locks the user into an unintended pattern.
-  4. **Destructive or Breaking Changes:** Deleting existing routes, changing core data models, or altering storage mechanisms.
-
-### 3. Lean Code Minimalism (Anti-Bloat & Surgical Implementation)
-- **"When Need Less Coding in Creation or Rectification, Use Less Coding — Don't Write Too Much Code":**
-  - **Maximum Functional Signal, Minimum Lines:** Solve issues at the root using the leanest, most idiomatic, and direct code possible.
-  - **Ban Over-Engineering & Gratuitous Abstractions:** Avoid sprawling utility files, complex factory patterns, redundant wrapper functions, and unnecessary boilerplate when a concise 10–20 line native implementation achieves 100% of the functionality.
-  - **Surgical Bug Rectifications:** Keep fixes surgical and focused (under 20–30 lines where possible). Never rewrite entire files or introduce massive wrapper layers to fix localized defects.
-  - **Completeness Without Bloat:** Lean coding does NOT mean placeholder omission. Code must remain 100% complete and production-ready (no `// ... rest of code unchanged` or `// TODO`), but free of superfluous fluff, redundant types, and excessive ceremonial scaffolding.
-
+Prefer direct, idiomatic solutions and avoid gratuitous wrappers, factories, and repeated boilerplate. A ten-line correction may be ideal for a local defect, but a larger change is justified when the contract, tests, or maintainability require it. Do not omit necessary behavior or leave an unfinished implementation merely to fit an arbitrary line limit.

@@ -7,3 +7,8 @@ desktop.ini
 *.log
 tmp/
 .temp/
+
+# Python and local instruction backups
+__pycache__/
+*.py[cod]
+.zero-guess-backup-*
