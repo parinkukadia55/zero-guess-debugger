@@ -1,12 +1,12 @@
 # 🛡️ Zero-Guess Debugger (`zero-guess-debugger`)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-1.6.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
+[![Version](https://img.shields.io/badge/Version-1.7.0-blue.svg)](https://github.com/parinkukadia55/zero-guess-debugger)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Compatible With](https://img.shields.io/badge/Compatible%20With-Antigravity%20%7C%20Cursor%20%7C%20Claude%20Code%20%7C%20Windsurf%20%7C%20Copilot-blueviolet)](#-quick-installation)
 
 > **Stop AI coding assistants from burning your quota with blind trial-and-error.**  
-> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, and an **End-of-Run Broken Item Eyesight Triage**.
+> An autonomous execution and debugging framework for AI agents. Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User Home + Admin Panel + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, and an **End-of-Run Broken Item Eyesight Triage**.
 
 ---
 
@@ -14,7 +14,7 @@
 
 Most AI coding assistants struggle in real-world production codebases:
 1. **Trial-and-Error Guessing:** They edit files blindly without reading source code, running in circles and burning 100,000+ tokens.
-2. **Context Amnesia:** They forget requirements discussed 3 turns ago in the chat thread.
+2. **Context Amnesia & Misplacing Features:** In long threads or after scanning a large repo, they lose track of existing features, misplace UI views, or re-implement duplicate code because they lack a persistent feature ledger.
 3. **Hidden Broken Buttons & Routes:** They update one view while quietly leaving 10 other buttons broken, dead routes unlinked, and endpoints 404ing—without ever alerting the user!
 4. **Python Script Fallback for Images:** When asked to generate an image or video, they lazily write crude Python PIL/matplotlib scripts to draw geometric squares instead of calling actual generative AI image models!
 5. **Broken Multi-Language (i18n):** They hardcode raw English strings into buttons and leave Hindi/Gujarati/Spanish translation files desynchronized or broken.
@@ -250,6 +250,53 @@ At the end of any conversation, build session, or audit, the agent gives the use
 2. Priority 2: Register missing routes in router table.
 3. Priority 3: Mount dead endpoints in server controller.
 ```
+
+---
+
+## 🧠 Phase 8: Persistent Feature Memory Board & Rectification Ledger (`MEMORY_BOARD.md`)
+
+Eliminates AI context loss, feature misplacement, and duplicate reinvention across long projects:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 PERSISTENT FEATURE MEMORY BOARD LIFECYCLE                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. Read MEMORY_BOARD.md (Load mental model of all existing features)        │
+│ 2. Full-Repo Scan (Detect new features, map known routes & handlers)        │
+│ 3. Reconciliation (Catch misplaced, disconnected, or desynced features)    │
+│ 4. Rectification & Problem Audit (Track defects, record fixes, log health) │
+│ 5. Persist MEMORY_BOARD.md (Write back to disk for cross-thread permanence)│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### The Feature Registry Schema
+Maintained at `./MEMORY_BOARD.md` in the project root:
+
+```markdown
+# 🧠 Project Feature Memory Board & Rectification Ledger
+
+> **Single Source of Truth for Codebase Features, Routes, Status & Rectifications**
+> Last Scanned / Synced: 2026-10-09 14:00 | Total Features: 42 | Operational: 39 | In Rectification: 3
+
+## 🗺️ Feature Registry Matrix
+
+| ID | Feature Name | Domain / Portal | Route / View File | Backing Logic / Endpoints | Health Status | Known Problems / Notes | Rectification History |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `FEAT-001` | Lagna Kundli Calculator | Web / User | `/kundli`, `KundliView.tsx` | `engine/chart.ts::computeLagna` | 🟢 Operational | None | Fixed timezone offset in v1.2 |
+| `FEAT-002` | Admin Muhurat Manager | Admin | `/admin/muhurat` | `api/admin.ts::toggleMuhurat` | 🟡 Degraded | Toggle desynced from Home Panel | In Rectification: adding store listener |
+| `FEAT-003` | PDF Dossier Export | User Dashboard | `/export/pdf` | `services/pdf.ts::buildPdf` | 🔴 Broken | Missing Gujarati font rendering | Issue logged; pending font asset embed |
+```
+
+### Full-Repo Scan & Anti-Misplacement Protocol
+Whenever the user asks to **"scan full repo"**, **"scan all files"**, or **"audit features"**:
+1. **Load Memory Board:** Check for an existing `MEMORY_BOARD.md`. If missing, initialize one immediately.
+2. **Deep Architectural Traversal:** Walk all route configs, page components, button handlers, API controllers, and state stores.
+3. **Reconcile Code vs Board:**
+   - Detect new features and assign them IDs (`FEAT-XXX`).
+   - Detect misplaced or orphaned features (features in code that disappeared from routes/dashboards).
+   - Flag broken or desynced features.
+4. **Rectification Tracking:** Record every defect in `Known Problems / Notes` and log fixes in `Rectification History`.
+5. **Persist:** Write back to `MEMORY_BOARD.md` so future agent sessions never forget or misplace any feature.
 
 ---
 

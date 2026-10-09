@@ -74,3 +74,11 @@ At the end of every conversation or audit, output a clear Eyesight Report:
 - **🟢 Verified & Operational Elements:** Confirmed routes and working buttons.
 - **🔴 Broken / Dead / Unlinked Elements Found:** Broken buttons, unhandled onclicks, missing routes, and 404 endpoints with exact file locations.
 - **🛠️ Remediation Roadmap:** Prioritized action items to fix remaining broken items.
+
+---
+
+### Phase 7: Persistent Feature Memory Board (`MEMORY_BOARD.md`)
+- Maintain `./MEMORY_BOARD.md` in repository root as the persistent source of truth for all features, routes, and health states.
+- **Full-Repo Scan Mandate:** When scanning repository or folders, traverse all views, routes, handlers, and APIs; cross-check against `MEMORY_BOARD.md` to catch misplaced, unlinked, or forgotten features.
+- **Problem & Rectification Ledger:** Log all discovered defects, track health (`🟢 Operational`, `🟡 Degraded`, `🔴 Broken`), and record fix histories for every feature.
+- **Pre-Action Check:** Always inspect the Memory Board before adding or refactoring features to prevent duplicate reinvention or route collisions.

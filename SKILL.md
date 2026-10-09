@@ -7,18 +7,19 @@ description: >-
   (i18n) parity, multi-portal interconnectivity (Web + User Home + Admin Panel + Mobile/Native),
   native AI image/video generation models, zero-hallucination, mandatory pre-fix diagnostic cards,
   2-attempt circuit breakers, bidirectional reverse-checking, strict 3-tier verification gates with
-  stale-build timestamp guards, and end-of-run eyesight triage reports for broken buttons, routes, and endpoints.
+  stale-build timestamp guards, persistent feature memory board (MEMORY_BOARD.md) with full-repo anti-misplacement scans,
+  and end-of-run eyesight triage reports for broken buttons, routes, and endpoints.
 license: MIT
 metadata:
   author: Parin Kukadia
   homepage: https://github.com/parinkukadia55/zero-guess-debugger
-  version: "1.6.0"
+  version: "1.7.0"
 ---
 
 # 🛡️ Zero-Guess Debugger & Autonomous Execution Engine
 
 > **Stop AI coding assistants and autonomous agents from burning your quota with blind trial-and-error.**  
-> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, and an **End-of-Run Broken Item Eyesight Triage**.
+> Combines **Cross-Thread Context Synthesis**, **Architectural Wireframe & Route Mapping**, **Goal Planning & Living Task Checklists**, **Multi-Language (i18n) Parity**, **Multi-Portal Interconnectivity (Web + User + Admin + Mobile Shell)**, **Native AI Generative Media Mandates**, **Zero-Guess Debugging**, **Stale-Build Timestamp Verification Guards**, **Persistent Feature Memory Board (MEMORY_BOARD.md)**, and an **End-of-Run Broken Item Eyesight Triage**.
 
 ---
 
@@ -262,3 +263,62 @@ At the end of any conversation, build session, or audit turn, the agent MUST sum
 ```
 
 This guarantees that the user is never left wondering what remains broken behind the scenes.
+
+---
+
+## 🧠 Phase 8: Persistent Feature Memory Board & Rectification Ledger (`MEMORY_BOARD.md`)
+
+To completely eliminate **AI Context Amnesia**—where agents scan a repository, forget previously implemented features across chat turns, misplace components, or re-implement duplicate/conflicting logic—the agent MUST maintain a persistent **Feature Memory Board**:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 PERSISTENT FEATURE MEMORY BOARD LIFECYCLE                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1. Read MEMORY_BOARD.md (Load complete mental model of all existing features│
+│ 2. Full-Repo Scan (Detect new features, verify known routes & handlers)    │
+│ 3. Reconciliation (Catch misplaced, disconnected, or desynced features)    │
+│ 4. Rectification & Problem Audit (Track defects, record fixes, log health) │
+│ 5. Persist MEMORY_BOARD.md (Write back to disk for cross-thread permanence)│
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### 1. The Standard Memory Board Schema (`MEMORY_BOARD.md`)
+The file lives in the repository root (`./MEMORY_BOARD.md`) and acts as the project's permanent feature knowledge base:
+
+```markdown
+# 🧠 Project Feature Memory Board & Rectification Ledger
+
+> **Single Source of Truth for Codebase Features, Routes, Status & Rectifications**
+> Last Scanned / Synced: YYYY-MM-DD HH:MM | Total Features: N | Operational: X | In Rectification: Y
+
+## 🗺️ Feature Registry Matrix
+
+| ID | Feature Name | Domain / Portal | Route / View File | Backing Logic / Endpoints | Health Status | Known Problems / Notes | Rectification History |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `FEAT-001` | Lagna Kundli Calculator | Web / User | `/kundli`, `KundliView.tsx` | `engine/chart.ts::computeLagna` | 🟢 Operational | None | Fixed timezone offset in v1.2 |
+| `FEAT-002` | Admin Muhurat Manager | Admin | `/admin/muhurat` | `api/admin.ts::toggleMuhurat` | 🟡 Degraded | Toggle desynced from Home Panel | In Rectification: adding store listener |
+| `FEAT-003` | PDF Dossier Export | User Dashboard | `/export/pdf` | `services/pdf.ts::buildPdf` | 🔴 Broken | Missing Gujarati font rendering | Issue logged; pending font asset embed |
+```
+
+### 2. Full-Repo Scan & Anti-Misplacement Protocol
+Whenever the user asks to **"scan full repo"**, **"scan all files"**, or **"audit features"**:
+1. **Load Memory Board:** Check for an existing `MEMORY_BOARD.md`. If missing, initialize one immediately.
+2. **Deep Architectural Traversal:** Walk all route configs, page components, button handlers, API controllers, and state stores.
+3. **Reconcile Against Memory Board:**
+   - **Discover New Features:** Register newly created views/features with a unique ID (`FEAT-XXX`).
+   - **Detect Misplaced Features:** Flag features that exist in code but disappeared from navigation menus, routes, or dashboards.
+   - **Detect Orphaned Endpoints:** Flag APIs or backend functions that have no UI trigger.
+4. **Health State Classification:**
+   - `🟢 Operational`: Fully wired, route works, handler operational, Light/Dark mode styled, i18n keys present.
+   - `🟡 Degraded`: Functional but has minor flaws (e.g. missing translation key, UI styling glitch in dark mode).
+   - `🔴 Broken`: Button throws error, route 404s, or backend endpoint missing.
+   - `🔵 In Progress`: Actively being created or refactored.
+5. **Rectification Tracking:**
+   - Log any diagnosed problem in the `Known Problems / Notes` column.
+   - When a bug fix or surgical change is applied, append a concrete note to `Rectification History` with the commit or file change summary.
+6. **Persist & Update:** Write the updated `MEMORY_BOARD.md` back to disk before finishing the turn.
+
+### 3. Pre-Action Cross-Check Mandate
+Before creating any new component, altering routes, or debugging:
+- **ALWAYS inspect `MEMORY_BOARD.md` first.**
+- Never blindly recreate an existing feature or overwrite an established route without verifying its registry on the board.
